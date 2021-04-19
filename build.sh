@@ -1,6 +1,9 @@
 #!/bin/bash
+mkdir -p dist
 export JEKYLL_VERSION=3.8
 docker run --rm \
+  --env JEKYLL_UID=1000 \
+  --env JEKYLL_GID=1000 \
   --volume="$PWD/dist:/srv/jekyll/dist" \
   --volume="$PWD/src:/srv/jekyll/src" \
   jekyll/minimal:$JEKYLL_VERSION \
