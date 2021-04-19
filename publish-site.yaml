@@ -21,6 +21,9 @@ jobs:
         git config --global user.email "3595932+rouke-broersma@users.noreply.github.com"
         GIT_COMMIT=$(git rev-parse HEAD)
         git checkout pages
-        git add dist
-        git commit -m "Update to $GIT_COMMIT"
+        ls --hide=dist | xargs rm -r
+        mv dist/* .
+        rmdir dist
+        git add .
+        git commit -am "Update to $GIT_COMMIT"
         git push -u origin pages
