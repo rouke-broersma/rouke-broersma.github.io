@@ -1,0 +1,25 @@
+name: Publish site
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the site in the jekyll/builder container
+      run: build.sh
+    - name: Push dist to github-pages branch
+      shell: bash
+      run: |
+        git config --global user.name 'Rouke Broersma'
+        git config --global user.email '3595932+rouke-broersma@users.noreply.github.com'
+        GIT_COMMIT=$(git rev-parse HEAD)
+        git checkout pages
+        git commit -am "Update to $GIT_COMMIT"
+        git push -u origin pages
