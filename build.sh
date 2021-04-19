@@ -1,5 +1,6 @@
 #!/bin/bash
 mkdir -p dist
+chown "$USER:$USER" dist
 export JEKYLL_VERSION=3.8
 docker run --rm \
   --env JEKYLL_UID=1000 \
