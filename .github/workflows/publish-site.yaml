@@ -22,6 +22,7 @@ jobs:
         git config --global user.name "Rouke Broersma"
         git config --global user.email "3595932+rouke-broersma@users.noreply.github.com"
         GIT_COMMIT=$(git rev-parse HEAD)
+        git fetch
         git checkout pages
         ls --hide=dist | xargs rm -r
         mv dist/* .
