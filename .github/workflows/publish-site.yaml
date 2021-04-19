@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the site in the jekyll/builder container
-      run: build.sh
+      run: ./build.sh
     - name: Push dist to github-pages branch
       shell: bash
       run: |
