@@ -15,12 +15,7 @@ jobs:
     - uses: docker://jekyll/minimal:3.8
       with:
         entrypoint: jekyll
-        args:
-        - build 
-        - -s 
-        - src 
-        - -d 
-        - dist
+        args: build -s src -d dist
     - name: Push dist to github-pages branch
       shell: bash
       run: |
