@@ -3,8 +3,6 @@ name: Publish site
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   publish:
@@ -12,8 +10,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
-      run: ./build.sh
+    # - name: Build the site in the jekyll/builder container
+    #   run: ./build.sh
+    - uses: docker://jekyll/minimal:3.8
+      with:
+        entrypoint: jekyll
+        args:
+        - build 
+        - -s 
+        - src 
+        - -d 
+        - dist
     - name: Push dist to github-pages branch
       shell: bash
       run: |
