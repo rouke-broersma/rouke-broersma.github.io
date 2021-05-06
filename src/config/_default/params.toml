@@ -6,7 +6,7 @@ commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
 rss = true
 
 # Theme settings
-selfHosted = true
+selfHosted = false
 mainSections = ["posts"]
 hideAuthor = true
 socialShare = true
