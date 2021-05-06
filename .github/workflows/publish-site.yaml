@@ -24,7 +24,8 @@ jobs:
         git fetch
         git checkout gh-pages
         ls --hide=dist | xargs rm -r
-        mv dist/* dist/.* .
+        mv dist/.* .
+        mv dist/* .
         rmdir dist
         git add .
         git commit -am "Update to $GIT_COMMIT"
