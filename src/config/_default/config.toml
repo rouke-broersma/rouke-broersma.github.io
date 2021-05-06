@@ -1,4 +1,5 @@
 # Basics
+baseUrl = "https://broersma.dev"
 DefaultContentLanguage = "en"
 theme = "beautifulhugo"
 
