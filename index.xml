@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>/</link>
+    <link>https://broersma.dev/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
-    <lastBuildDate>Thu, 06 May 2021 14:13:44 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 14:13:44 +0000</lastBuildDate><atom:link href="https://broersma.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First blog post</title>
-      <link>/posts/first/</link>
+      <link>https://broersma.dev/posts/first/</link>
       <pubDate>Thu, 06 May 2021 14:13:44 +0000</pubDate>
       <author>rouke@broersma.dev (Rouke Broersma)</author>
-      <guid>/posts/first/</guid>
+      <guid>https://broersma.dev/posts/first/</guid>
       <description>Hallo</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>/about/</link>
+      <link>https://broersma.dev/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>rouke@broersma.dev (Rouke Broersma)</author>
-      <guid>/about/</guid>
+      <guid>https://broersma.dev/about/</guid>
       <description>Here should be stuff about who I am</description>
     </item>
     

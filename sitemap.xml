@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://broersma.dev/</loc>
     <lastmod>2021-05-06T21:02:51+02:00</lastmod>
   </url><url>
-    <loc>/posts/first/</loc>
+    <loc>https://broersma.dev/posts/first/</loc>
     <lastmod>2021-05-06T21:02:51+02:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://broersma.dev/posts/</loc>
     <lastmod>2021-05-06T21:02:51+02:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://broersma.dev/about/</loc>
     <lastmod>2021-05-06T21:02:51+02:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://broersma.dev/categories/</loc>
   </url><url>
-    <loc>/pages/</loc>
+    <loc>https://broersma.dev/pages/</loc>
     <lastmod>2021-05-06T21:02:51+02:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://broersma.dev/tags/</loc>
   </url>
 </urlset>
