@@ -1,0 +1,6 @@
+subtitle = "Short blogs"
+logo = "avatar/avatar.jpg"
+# favicon = "img/globe16.ico"
+dateFormat = "2 January 2006"
+commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree"
+rss = true
