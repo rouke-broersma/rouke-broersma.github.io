@@ -1,6 +1,11 @@
+title = "Rouke Broersma"
 subtitle = "Short blogs"
-logo = "avatar/avatar.jpg"
-# favicon = "img/globe16.ico"
+logo = "images/icon-circle.png"
+favicon = "favicon.ico"
 dateFormat = "2 January 2006"
-commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree"
+commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
 rss = true
+
+# Theme settings
+selfHosted = true
+mainSections = ["posts"]

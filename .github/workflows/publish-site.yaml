@@ -10,12 +10,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
+      with:
+          submodules: true  # Fetch Hugo themes
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+    - name: Build the site
       run: ./build.sh
-    # - uses: docker://jekyll/minimal:3.8
-    #   with:
-    #     entrypoint: jekyll
-    #     args: build -s src -d dist
     - name: Push dist to github-pages branch
       shell: bash
       run: |
@@ -23,10 +22,10 @@ jobs:
         git config --global user.email "3595932+rouke-broersma@users.noreply.github.com"
         GIT_COMMIT=$(git rev-parse HEAD)
         git fetch
-        git checkout pages
+        git checkout gh-pages
         ls --hide=dist | xargs rm -r
         mv dist/* .
         rmdir dist
         git add .
         git commit -am "Update to $GIT_COMMIT"
-        git push -u origin pages
+        git push -u origin gh-pages

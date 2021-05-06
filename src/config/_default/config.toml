@@ -1,8 +1,6 @@
 # Basics
 DefaultContentLanguage = "en"
-title = "Rouke Broersma"
 theme = "beautifulhugo"
-summarylength = 10
 
 # Build options
 publishdir = "/dist"
@@ -15,7 +13,7 @@ enableRobotsTXT = true
 #disqusShortname = ""
 
 # Google Analytics
-#googleAnalytics = "UA-123-45"
+googleAnalytics = "UA-38790437-4"
 
 # Syntax highlighting
 pygmentsUseClasses = true
