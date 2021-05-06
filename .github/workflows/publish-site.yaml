@@ -24,7 +24,7 @@ jobs:
         git fetch
         git checkout gh-pages
         ls --hide=dist | xargs rm -r
-        mv dist/.* .
+        shopt -s dotglob
         mv dist/* .
         rmdir dist
         git add .
