@@ -6,5 +6,6 @@ docker run --rm \
   --publish 1313:1313 \
   klakegg/hugo:$HUGO_VERSION-ext-alpine \
   server \
-  --source "/project/src"
+  --source "/project/src" \
+  --environment development
 sudo chown -R "$USER:$USER" src

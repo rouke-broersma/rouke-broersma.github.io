@@ -1,9 +1,10 @@
 #!/bin/bash
 git submodule update
 export HUGO_VERSION=0.82.0
-docker run --rm \
+docker run --rm -it \
   --volume="$(pwd):/project" \
   --publish 1313:1313 \
   klakegg/hugo:$HUGO_VERSION-ext-alpine \
-  server --source "/project/src"
+  shell \
+  --environment development
 sudo chown -R "$USER:$USER" src
