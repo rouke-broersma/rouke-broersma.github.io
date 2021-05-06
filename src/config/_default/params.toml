@@ -1,5 +1,4 @@
-title = "Rouke Broersma"
-subtitle = "Short blogs"
+title = "All about tech"
 logo = "images/icon-circle.png"
 favicon = "favicon.ico"
 dateFormat = "2 January 2006"
@@ -9,3 +8,7 @@ rss = true
 # Theme settings
 selfHosted = true
 mainSections = ["posts"]
+hideAuthor = true
+socialShare = true
+homeTitle = "Welcome"
+subtitle = "Posts"
