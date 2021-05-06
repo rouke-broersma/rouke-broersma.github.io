@@ -6,6 +6,7 @@ docker run --rm \
   --volume="$(pwd)/dist:/dist" \
   --volume="$(pwd):/project" \
   klakegg/hugo:$HUGO_VERSION-ext-alpine \
-   --source "/project/src"
+   --source "/project/src" \
+   --environment production
 sudo chown -R "$USER:$USER" src
 sudo chown -R "$USER:$USER" dist
