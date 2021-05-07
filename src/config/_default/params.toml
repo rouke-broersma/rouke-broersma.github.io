@@ -1,8 +1,9 @@
 title = "All about tech"
+homeTitle = "Welcome"
+subtitle = "Posts"
 logo = "images/icon-circle.png"
 favicon = "favicon.ico"
 dateFormat = "2 January 2006"
-commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
 rss = true
 
 # Theme settings
@@ -10,6 +11,5 @@ selfHosted = false
 mainSections = ["posts"]
 hideAuthor = true
 socialShare = true
-homeTitle = "Welcome"
-subtitle = "Posts"
 gcse = "ddc7e117c445f2ff2"
+commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
