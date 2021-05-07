@@ -11,5 +11,6 @@ selfHosted = false # Search icon is not functional in self hosted mode..
 mainSections = ["post"]
 hideAuthor = true
 socialShare = true
+comments = true
 gcse = "ddc7e117c445f2ff2"
 commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
