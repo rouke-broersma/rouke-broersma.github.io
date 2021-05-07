@@ -1,5 +1,5 @@
 homeTitle = "Welcome"
-subtitle = "Posts"
+subtitle = "Recent posts"
 logo = "images/icon-circle.png"
 favicon = "favicon.ico"
 dateFormat = "2 January 2006"
@@ -8,7 +8,7 @@ rss = true
 # Theme settings
 since = 2021
 selfHosted = false # Search icon is not functional in self hosted mode..
-mainSections = ["posts"]
+mainSections = ["post"]
 hideAuthor = true
 socialShare = true
 gcse = "ddc7e117c445f2ff2"
