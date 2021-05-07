@@ -6,6 +6,7 @@ dateFormat = "2 January 2006"
 rss = true
 
 # Theme settings
+since = 2021
 selfHosted = false
 mainSections = ["posts"]
 hideAuthor = true
