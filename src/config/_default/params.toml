@@ -7,7 +7,7 @@ rss = true
 
 # Theme settings
 since = 2021
-selfHosted = false
+selfHosted = false # Search icon is not functional in self hosted mode..
 mainSections = ["posts"]
 hideAuthor = true
 socialShare = true

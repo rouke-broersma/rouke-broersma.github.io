@@ -4,7 +4,7 @@ buildFuture = true
 buildExpired = true
 
 # Disqus
-disqusShortname = ""
+disqusShortname = "" # Disable
 
 # Google Analytics
-googleAnalytics = ""
+googleAnalytics = "" # Disable
