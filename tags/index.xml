@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on </title>
+    <title>Tags on All about tech</title>
     <link>https://broersma.dev/tags/</link>
-    <description>Recent content in Tags on </description>
+    <description>Recent content in Tags on All about tech</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster><atom:link href="https://broersma.dev/tags/index.xml" rel="self" type="application/rss+xml" />
