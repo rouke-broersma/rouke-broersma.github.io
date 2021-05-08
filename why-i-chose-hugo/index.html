@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Overview of all pages with the tag #Tags - Rouke&#39;s Blog</title>
-  <meta name="description" content="Overview of all pages with the tag #Tags, such as: hugo">
+  <title>Why I chose Hugo - Rouke&#39;s Blog</title>
+  <meta name="description" content="Or why I ditched Jekyll">
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -29,14 +29,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/broersma.dev",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/broersma.dev\/why-i-chose-hugo\/",
+          "name": "Why i chose hugo"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Rouke Broersma"
+  },
+  "headline": "Why I chose Hugo",
+  "description" : "This blog is currently powered by Hugo, a static site generator built in Go. However this was not my first choice. Initially I was going to use Jekyll for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.\nAlmost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn\u0026rsquo;t have to.",
+  "inLanguage" : "en",
+  "wordCount":  314 ,
+  "datePublished" : "2021-05-08T20:44:16",
+  "dateModified" : "2021-05-08T20:44:16",
+  "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
+  "keywords" : [ "hugo, jekyll" ],
+  "mainEntityOfPage" : "https:\/\/broersma.dev\/why-i-chose-hugo\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/broersma.dev",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/broersma.dev\/images\/icon-circle.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Tags" />
+<meta property="og:title" content="Why I chose Hugo" />
+<meta property="og:description" content="Or why I ditched Jekyll">
 <meta property="og:image" content="https://broersma.dev/images/icon-circle.png" />
-<meta property="og:url" content="https://broersma.dev/tags/" />
+<meta property="og:url" content="https://broersma.dev/why-i-chose-hugo/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke&#39;s Blog" />
 
-  <meta name="twitter:title" content="Tags" />
+  <meta name="twitter:title" content="Why I chose Hugo" />
+  <meta name="twitter:description" content="Or why I ditched Jekyll">
   <meta name="twitter:image" content="https://broersma.dev/images/icon-circle.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@roukebroersma" />
@@ -217,14 +267,29 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>Tags</h1>
-              
-              
-                <hr class="small">
+                <h1>Why I chose Hugo</h1>
               
               
+              
+                
+                  <h2 class="post-subheading">Or why I ditched Jekyll</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on 8 May 2021
+  
+  
+  
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -235,64 +300,138 @@ if (!doNotTrack) {
 
 
     
-
-
-
 <div class="container" role="main">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
-    <article class="post-preview">
-      <div class="panel-group" id="accordion">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>This blog is currently powered by <a href="https://gohugo.io/">Hugo</a>, a static site generator built in Go. However this was not my first choice.
+Initially I was going to use <a href="https://jekyllrb.com/">Jekyll</a> for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.</p>
+<p>Almost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn&rsquo;t have to. Github generates the static site and then pushes the static content to the Github Pages &lsquo;environment&rsquo;. This basically means Github will push <em>any</em> content to Github Pages including any content not generated by Jekyll. I could use this to manually build my Jekyll static content in a Github Workflow push that content to a branch the Github Pages Workflow listens to and voila I am no longer bound to Github Jekyll while I can still use Github Pages (and Jekyll!)!</p>
+<p><strong><em>So why are you now using Hugo?</em></strong></p>
+<p>Well, I tried to update Jekyll to a more current version..</p>
+<p>The Jekyll <a href="https://jekyllrb.com/docs/upgrading/">upgrade manual</a> makes it seem so easy. Just execute <code>bundle update</code> or <code>gem update jekyll</code>! I wish 😄!</p>
+<p>I spent days going over different aspects of the Ruby ecosystem (that I knew nothing about and still don&rsquo;t know much about), fighting with Bundler and my Gemfile. Wondering why none of the update commands did anything.</p>
+<p>After the weekend I was talking to coworkers about my struggles. They asked, why are you using Jekyll? Just use Hugo, we already use it for our internal docs.</p>
+<p>So I tried Hugo. And it worked. And I was happy.</p>
+<p>And I am happy 😉</p>
+<p><em>Note: I&rsquo;m not blaming Jekyll or Ruby for that matter. I&rsquo;m sure they are wonderful tools. But I&rsquo;m not a ruby developer, I don&rsquo;t want to have to learn the intricacies of Ruby to manage a blog.</em></p>
+
+
         
-          <div class="panel panel-default">
-            <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapsehugo" data-parent="#accordion">
-                <div class="panel-heading" id="headerhugo">
-                  <h4 class="panel-title">
-                      hugo
-                    <span class="badge">1</span>
-                  </h4>
-                </div>
-            </a>
-            <div id="collapsehugo" class="panel-collapse collapse">
-              <div class="panel-body">
-                <a href="https://broersma.dev/tags/hugo/" class="list-group-item view-all">
-                View all</a>
-                <div class="list-group">
-                  
-                    <a href="https://broersma.dev/why-i-chose-hugo/" class="list-group-item">Why I chose Hugo</a>
-                  
-                </div>
-              </div>
-            </div>
+          <div class="blog-tags">
+            
+              <a href="https://broersma.dev/tags/hugo/">hugo</a>&nbsp;
+            
+              <a href="https://broersma.dev/tags/jekyll/">jekyll</a>&nbsp;
+            
           </div>
         
-          <div class="panel panel-default">
-            <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapsejekyll" data-parent="#accordion">
-                <div class="panel-heading" id="headerjekyll">
-                  <h4 class="panel-title">
-                      jekyll
-                    <span class="badge">1</span>
-                  </h4>
-                </div>
-            </a>
-            <div id="collapsejekyll" class="panel-collapse collapse">
-              <div class="panel-body">
-                <a href="https://broersma.dev/tags/jekyll/" class="list-group-item view-all">
-                View all</a>
-                <div class="list-group">
-                  
-                    <a href="https://broersma.dev/why-i-chose-hugo/" class="list-group-item">Why I chose Hugo</a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
+
         
-      </div>
-    </article>
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;text=Why%20I%20chose%20Hugo&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;description=Why%20I%20chose%20Hugo" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://broersma.dev/welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "broersma" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
   </div>
 </div>
-
-
 
       
 <footer>
@@ -343,7 +482,7 @@ if (!doNotTrack) {
               </li>
           
           <li>
-            <a href="https://broersma.dev/tags/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
@@ -372,7 +511,7 @@ if (!doNotTrack) {
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/8d6946bfd54fa264fa364b07632be2dafcf80801">8d6946bf</a>]
         </p>
       </div>
     </div>

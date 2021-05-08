@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Rouke&#39;s Blog</title>
-    <link>https://broersma.dev/post/</link>
-    <description>Recent content in Posts on Rouke&#39;s Blog</description>
+    <title>hugo on Rouke&#39;s Blog</title>
+    <link>https://broersma.dev/tags/hugo/</link>
+    <description>Recent content in hugo on Rouke&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
-    <lastBuildDate>Sat, 08 May 2021 20:44:16 +0000</lastBuildDate><atom:link href="https://broersma.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 May 2021 20:44:16 +0000</lastBuildDate><atom:link href="https://broersma.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Why I chose Hugo</title>
       <link>https://broersma.dev/why-i-chose-hugo/</link>
@@ -16,15 +16,6 @@
       <guid>https://broersma.dev/why-i-chose-hugo/</guid>
       <description>This blog is currently powered by Hugo, a static site generator built in Go. However this was not my first choice. Initially I was going to use Jekyll for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.
 Almost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn&amp;rsquo;t have to.</description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://broersma.dev/welcome/</link>
-      <pubDate>Fri, 07 May 2021 17:16:45 +0000</pubDate>
-      <author>rouke@broersma.dev (Rouke Broersma)</author>
-      <guid>https://broersma.dev/welcome/</guid>
-      <description>Welcome to my blog! I don&amp;rsquo;t know what to do with this yet..</description>
     </item>
     
   </channel>

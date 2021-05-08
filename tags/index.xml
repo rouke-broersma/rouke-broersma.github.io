@@ -6,6 +6,25 @@
     <description>Recent content in Tags on Rouke&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
-    <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster><atom:link href="https://broersma.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
+    <lastBuildDate>Sat, 08 May 2021 20:44:16 +0000</lastBuildDate><atom:link href="https://broersma.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo</title>
+      <link>https://broersma.dev/tags/hugo/</link>
+      <pubDate>Sat, 08 May 2021 20:44:16 +0000</pubDate>
+      <author>rouke@broersma.dev (Rouke Broersma)</author>
+      <guid>https://broersma.dev/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://broersma.dev/tags/jekyll/</link>
+      <pubDate>Sat, 08 May 2021 20:44:16 +0000</pubDate>
+      <author>rouke@broersma.dev (Rouke Broersma)</author>
+      <guid>https://broersma.dev/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
