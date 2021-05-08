@@ -1,6 +1,6 @@
 # Basics
 baseUrl = "https://broersma.dev"
-title = "Rouke Broersma's Blog"
+title = "Rouke's Blog"
 DefaultContentLanguage = "en"
 theme = "beautifulhugo"
 
