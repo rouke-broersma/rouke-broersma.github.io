@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Why I chose Hugo - Rouke&#39;s Blog</title>
-  <meta name="description" content="Or why I ditched Jekyll">
+  <title>Hugo Modules for Themes - Rouke&#39;s Blog</title>
+  <meta name="description" content="Instead of git submodules">
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/broersma.dev\/why-i-chose-hugo\/",
-          "name": "Why i chose hugo"
+          "@id": "https:\/\/broersma.dev\/hugo-modules-for-themes\/",
+          "name": "Hugo modules for themes"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : "Rouke Broersma"
   },
-  "headline": "Why I chose Hugo",
-  "description" : "This blog is currently powered by Hugo, a static site generator built in Go. However this was not my first choice. Initially I was going to use Jekyll for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.\nAlmost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn\u0026rsquo;t have to.",
+  "headline": "Hugo Modules for Themes",
+  "description" : "The tutorial for Hugo tells you how to install themes in step 3. This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.\ngit init git submodule add https:\/\/github.com\/theNewDynamic\/gohugo-theme-ananke.git themes\/ananke echo theme = \\\u0026#34;ananke\\\u0026#34; \u0026gt;\u0026gt; config.toml This has some problems. Mainly that I don\u0026rsquo;t want to learn how to work with git submodules 😄 but also.",
   "inLanguage" : "en",
-  "wordCount":  314 ,
-  "datePublished" : "2021-05-08T20:44:16",
-  "dateModified" : "2021-05-08T20:44:16",
+  "wordCount":  213 ,
+  "datePublished" : "2021-05-21T19:56:08",
+  "dateModified" : "2021-05-21T19:56:08",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
-  "keywords" : [ "hugo, jekyll" ],
-  "mainEntityOfPage" : "https:\/\/broersma.dev\/why-i-chose-hugo\/",
+  "keywords" : [ "hugo" ],
+  "mainEntityOfPage" : "https:\/\/broersma.dev\/hugo-modules-for-themes\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/broersma.dev",
@@ -78,15 +78,15 @@
 }
 </script>
 
-<meta property="og:title" content="Why I chose Hugo" />
-<meta property="og:description" content="Or why I ditched Jekyll">
+<meta property="og:title" content="Hugo Modules for Themes" />
+<meta property="og:description" content="Instead of git submodules">
 <meta property="og:image" content="https://broersma.dev/images/icon-circle.png" />
-<meta property="og:url" content="https://broersma.dev/why-i-chose-hugo/" />
+<meta property="og:url" content="https://broersma.dev/hugo-modules-for-themes/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke&#39;s Blog" />
 
-  <meta name="twitter:title" content="Why I chose Hugo" />
-  <meta name="twitter:description" content="Or why I ditched Jekyll">
+  <meta name="twitter:title" content="Hugo Modules for Themes" />
+  <meta name="twitter:description" content="Instead of git submodules">
   <meta name="twitter:image" content="https://broersma.dev/images/icon-circle.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@roukebroersma" />
@@ -116,17 +116,17 @@
 <meta name="twitter:site" content="@roukebroersma" key="twhandle" />
 
 
-<title>Why I chose Hugo &middot; Rouke&#39;s Blog</title>
+<title>Hugo Modules for Themes &middot; Rouke&#39;s Blog</title>
 <meta name="description" content="" />
 
-<meta name="keywords" content="hugo,jekyll," />
+<meta name="keywords" content="hugo," />
 
-<meta property="og:url" content="https://broersma.dev/why-i-chose-hugo/" />
-<meta property="og:title" content="Why I chose Hugo &middot; Rouke&#39;s Blog" />
+<meta property="og:url" content="https://broersma.dev/hugo-modules-for-themes/" />
+<meta property="og:title" content="Hugo Modules for Themes &middot; Rouke&#39;s Blog" />
 
 <meta name="og:description" content="I write short(ish) blogposts about things that interest me." />
 
-<meta name="twitter:url" content="https://broersma.dev/why-i-chose-hugo/" />
+<meta name="twitter:url" content="https://broersma.dev/hugo-modules-for-themes/" />
 
 <meta property="og:image" content="https://broersma.devimages/icon-circle.png" key="ogimage" />
 
@@ -294,19 +294,19 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Why I chose Hugo</h1>
+                <h1>Hugo Modules for Themes</h1>
               
               
               
                 
-                  <h2 class="post-subheading">Or why I ditched Jekyll</h2>
+                  <h2 class="post-subheading">Instead of git submodules</h2>
                 
               
               
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 8 May 2021
+  <i class="fas fa-calendar"></i>&nbsp;Posted on 21 May 2021
   
   
   
@@ -329,25 +329,34 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This blog is currently powered by <a href="https://gohugo.io/">Hugo</a>, a static site generator built in Go. However this was not my first choice.
-Initially I was going to use <a href="https://jekyllrb.com/">Jekyll</a> for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.</p>
-<p>Almost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn&rsquo;t have to. Github generates the static site and then pushes the static content to the Github Pages &lsquo;environment&rsquo;. This basically means Github will push <em>any</em> content to Github Pages including any content not generated by Jekyll. I could use this to manually build my Jekyll static content in a Github Workflow push that content to a branch the Github Pages Workflow listens to and voila I am no longer bound to Github Jekyll while I can still use Github Pages (and Jekyll!)!</p>
-<p><strong><em>So why are you now using Hugo?</em></strong></p>
-<p>Well, I tried to update Jekyll to a more current version..</p>
-<p>The Jekyll <a href="https://jekyllrb.com/docs/upgrading/">upgrade manual</a> makes it seem so easy. Just execute <code>bundle update</code> or <code>gem update jekyll</code>! I wish 😄!</p>
-<p>I spent days going over different aspects of the Ruby ecosystem (that I knew nothing about and still don&rsquo;t know much about), fighting with Bundler and my Gemfile. Wondering why none of the update commands did anything.</p>
-<p>After the weekend I was talking to coworkers about my struggles. They asked, why are you using Jekyll? Just use Hugo, we already use it for our internal docs.</p>
-<p>So I tried Hugo. And it worked. And I was happy.</p>
-<p>And I am happy 😉</p>
-<p><em>Note: I&rsquo;m not blaming Jekyll or Ruby for that matter. I&rsquo;m sure they are wonderful tools. But I&rsquo;m not a ruby developer, I don&rsquo;t want to have to learn the intricacies of Ruby to manage a blog.</em></p>
+        <p>The <a href="https://gohugo.io/getting-started/quick-start/">tutorial</a> for Hugo tells you how to install themes in step 3.
+This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+<span class="nb">echo</span> <span class="nv">theme</span> <span class="o">=</span> <span class="se">\&#34;</span>ananke<span class="se">\&#34;</span> &gt;&gt; config.toml
+</code></pre></div><p>This has some problems.
+Mainly that I don&rsquo;t want to learn how to work with git submodules 😄 but also.. I don&rsquo;t understand git submodules 🙄.
+But I don&rsquo;t have to! Apparently Hugo has created the concept of <a href="https://gohugo.io/hugo-modules/use-modules/">Hugo modules</a>.
+They are basically <a href="https://blog.golang.org/using-go-modules">Go modules</a>.</p>
+<h3 id="how-do-you-use-them">How do you use them?</h3>
+<p>Firstly you have to make your site a Go module, hugo can help you with this.</p>
+<p><code>hugo mod init &lt;any-name-you-want&gt;</code></p>
+<p>Then you add your themes/modules to a hugo module config.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[[imports]]
+    path = &#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;
+</code></pre></div><p><em>Notice that the path does not include <code>https://</code> or <code>.git</code>. Don&rsquo;t add them, it won&rsquo;t work.</em></p>
+<p>Lastly delete the git submodules in <code>/themes</code>, git submodule config (<code>.gitsubmodules</code> file) and the <code>theme = &quot;ananke&quot;</code> from <code>config.toml</code>. Done!</p>
+<p>As a little extra here are some nice hugo modules I&rsquo;ve recently started using, which you can try to add as a hu(go) module!</p>
+<ol>
+<li><a href="https://github.com/msfjarvis/hugo-social-metadata">social media metadata</a></li>
+<li><a href="https://github.com/martignoni/hugo-notice">colourful notices to use in your pages to highlight warnings etc</a></li>
+</ol>
 
 
         
           <div class="blog-tags">
             
               <a href="https://broersma.dev/tags/hugo/">hugo</a>&nbsp;
-            
-              <a href="https://broersma.dev/tags/jekyll/">jekyll</a>&nbsp;
             
           </div>
         
@@ -362,42 +371,42 @@ Initially I was going to use <a href="https://jekyllrb.com/">Jekyll</a> for the 
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;text=Why%20I%20chose%20Hugo&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f&amp;text=Hugo%20Modules%20for%20Themes&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f&amp;title=Hugo%20Modules%20for%20Themes" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f&amp;title=Hugo%20Modules%20for%20Themes" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;title=Why%20I%20chose%20Hugo" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f&amp;title=Hugo%20Modules%20for%20Themes" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fbroersma.dev%2fwhy-i-chose-hugo%2f&amp;description=Why%20I%20chose%20Hugo" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fbroersma.dev%2fhugo-modules-for-themes%2f&amp;description=Hugo%20Modules%20for%20Themes" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -416,13 +425,9 @@ Initially I was going to use <a href="https://jekyllrb.com/">Jekyll</a> for the 
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://broersma.dev/welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">&larr; Previous Post</a>
+              <a href="https://broersma.dev/why-i-chose-hugo/" data-toggle="tooltip" data-placement="top" title="Why I chose Hugo">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://broersma.dev/hugo-modules-for-themes/" data-toggle="tooltip" data-placement="top" title="Hugo Modules for Themes">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
@@ -540,7 +545,7 @@ Initially I was going to use <a href="https://jekyllrb.com/">Jekyll</a> for the 
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/8d6946bfd54fa264fa364b07632be2dafcf80801">8d6946bf</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/6060a9ecc262b05ab7b9fe30aac48118c148a688">6060a9ec</a>]
         </p>
       </div>
     </div>

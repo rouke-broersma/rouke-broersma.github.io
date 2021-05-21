@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
-    <lastBuildDate>Sat, 08 May 2021 20:44:16 +0000</lastBuildDate><atom:link href="https://broersma.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 19:56:08 +0000</lastBuildDate><atom:link href="https://broersma.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Modules for Themes</title>
+      <link>https://broersma.dev/hugo-modules-for-themes/</link>
+      <pubDate>Fri, 21 May 2021 19:56:08 +0000</pubDate>
+      <author>rouke@broersma.dev (Rouke Broersma)</author>
+      <guid>https://broersma.dev/hugo-modules-for-themes/</guid>
+      <description>The tutorial for Hugo tells you how to install themes in step 3. This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.
+git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke echo theme = \&amp;#34;ananke\&amp;#34; &amp;gt;&amp;gt; config.toml This has some problems. Mainly that I don&amp;rsquo;t want to learn how to work with git submodules 😄 but also.</description>
+    </item>
+    
     <item>
       <title>Why I chose Hugo</title>
       <link>https://broersma.dev/why-i-chose-hugo/</link>
