@@ -14,8 +14,7 @@ title="$year/$month/$day/$title.md"
 
 docker run --rm \
   --volume="$(pwd):/project" \
-  --publish 1313:1313 \
   --workdir="/project/src" \
-  klakegg/hugo:alpine \
+  klakegg/hugo:ext-alpine \
   new --kind post "post/$title"
 sudo chown -R "$USER:$USER" src
