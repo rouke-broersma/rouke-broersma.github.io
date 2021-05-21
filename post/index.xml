@@ -28,14 +28,5 @@ git init git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.
 Almost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn&amp;rsquo;t have to.</description>
     </item>
     
-    <item>
-      <title>Welcome</title>
-      <link>https://broersma.dev/welcome/</link>
-      <pubDate>Fri, 07 May 2021 17:16:45 +0000</pubDate>
-      <author>rouke@broersma.dev (Rouke Broersma)</author>
-      <guid>https://broersma.dev/welcome/</guid>
-      <description>Welcome to my blog! I don&amp;rsquo;t know what to do with this yet..</description>
-    </item>
-    
   </channel>
 </rss>
