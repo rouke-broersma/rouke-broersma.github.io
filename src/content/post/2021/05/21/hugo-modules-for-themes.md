@@ -4,7 +4,6 @@ date: 2021-05-21T19:56:08Z
 subtitle: "Instead of git submodules"
 image: ""
 tags: ["hugo"]
-draft: true
 ---
 
 The [tutorial](https://gohugo.io/getting-started/quick-start/) for Hugo tells you how to install themes in step 3. 
