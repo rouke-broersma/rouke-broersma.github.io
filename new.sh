@@ -12,7 +12,6 @@ day=$(date +'%d')
 
 title="$year/$month/$day/$title.md"
 
-git submodule update
 docker run --rm \
   --volume="$(pwd):/project" \
   --publish 1313:1313 \

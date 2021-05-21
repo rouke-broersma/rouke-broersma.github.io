@@ -2,7 +2,6 @@
 baseUrl = "https://broersma.dev"
 title = "Rouke's Blog"
 DefaultContentLanguage = "en"
-theme = "beautifulhugo"
 
 # Build options
 publishdir = "/dist"

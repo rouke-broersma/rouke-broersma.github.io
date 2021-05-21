@@ -1,0 +1,4 @@
+[[imports]]
+    path = "github.com/halogenica/beautifulhugo"
+[[imports]]
+    path = "github.com/martignoni/hugo-notice"

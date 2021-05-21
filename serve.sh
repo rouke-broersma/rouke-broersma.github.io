@@ -1,5 +1,4 @@
 #!/bin/bash
-git submodule update
 export HUGO_VERSION=0.82.0
 xdg-open http://localhost:1313
 docker run --rm \
