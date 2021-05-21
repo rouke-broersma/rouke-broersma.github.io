@@ -2,3 +2,5 @@ github.com/halogenica/beautifulhugo v0.0.0-20210106080152-99ca240e9977 h1:pPJoUP
 github.com/halogenica/beautifulhugo v0.0.0-20210106080152-99ca240e9977/go.mod h1:ufPkGvDjUx8ELYtHwaxCSuQeDMIrW7wtDzw/Hqoy4CY=
 github.com/martignoni/hugo-notice v0.0.0-20201231104550-13be940d0209 h1:m9TZEJM3nY6y/PNFTiNzQhuxo0X59xpsUHef34oouvw=
 github.com/martignoni/hugo-notice v0.0.0-20201231104550-13be940d0209/go.mod h1:k+PSLmVlZC5iWWxLLOSDQetCCeeqKZQvQJ+AXLg6X1A=
+github.com/msfjarvis/hugo-social-metadata v1.0.0 h1:mfLnus8iznPGiyFkJC93eCWr1PrdiNyv2BSONX1ZQVg=
+github.com/msfjarvis/hugo-social-metadata v1.0.0/go.mod h1:VfkrQTa9Gvdja58swLlBZz2/7ZEoj5nk9xt0pJAhfVo=

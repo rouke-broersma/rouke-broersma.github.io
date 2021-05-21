@@ -1,4 +1,6 @@
 [[imports]]
-    path = "github.com/halogenica/beautifulhugo"
+    path = "github.com/msfjarvis/hugo-social-metadata"
 [[imports]]
     path = "github.com/martignoni/hugo-notice"
+[[imports]]
+    path = "github.com/halogenica/beautifulhugo"

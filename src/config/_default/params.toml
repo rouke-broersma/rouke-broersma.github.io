@@ -5,7 +5,7 @@ favicon = "favicon.ico"
 dateFormat = "2 January 2006"
 rss = true
 
-# Theme settings
+# beautiful-hugo settings
 since = 2021
 selfHosted = false # Search icon is not functional in self hosted mode..
 mainSections = ["post"]
@@ -14,3 +14,9 @@ socialShare = true
 comments = true
 gcse = "ddc7e117c445f2ff2"
 commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
+
+# hugo-social-metadata settings
+description = "I write short(ish) blogposts about things that interest me."
+keywords = "short, blog, broersma, tech, azure, dotnet, mutation-testing"
+twitterUsername = "@roukebroersma"
+socialImage = "images/icon-circle.png"
