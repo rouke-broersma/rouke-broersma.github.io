@@ -7,7 +7,13 @@
 ## Hugo command line
 `./shell.sh`
 
-## Themes
-This blog uses submodules for themes. They live in `/src/themes`.  
+## New draft
+`./new.sh draft "<title>"`
 
-To update the themes run `git submodule update --remote`.  
+## New post
+`./new.sh "<title>"`
+
+## Themes
+This blog uses go modules for themes. To add more modules see module.toml
+
+Run `update-modules.sh` to update all modules

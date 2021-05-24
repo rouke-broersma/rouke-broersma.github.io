@@ -1,8 +1,5 @@
 ---
 title: "How to Use Dedicated Disks in WSL"
-date: 2021-05-21T18:40:19Z
-subtitle: ""
-image: ""
 tags: ["wsl"]
 draft: true
 ---
