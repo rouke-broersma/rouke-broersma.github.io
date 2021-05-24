@@ -19,6 +19,6 @@ Well the answer is that currently you can't load external disks in WSL.
 Luckily I was not the only one that thought this might be useful. 
 Microsoft is currently working on enabling mounting disks in WSL natively and the [feature]((https://docs.microsoft.com/en-us/windows/wsl/wsl2-mount-disk)) is available for preview through the [Windows Insiders Program](https://insider.windows.com/en-us/).
 
-{{< notice warning >}}
+{{<notice warning>}}
 If you decide to continue and join the Insiders Program, realize that this contains cutting edge Windows updates and can potentially break your system in an update.
-{{< /notice >}}
+{{</notice>}}

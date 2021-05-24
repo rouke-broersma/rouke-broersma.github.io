@@ -2,6 +2,9 @@
 title: "Hugo Modules for Themes"
 date: 2021-05-21T19:56:08Z
 subtitle: "Instead of git submodules"
+summary: "The hugo tutorial tells you to use git submodules for themes. 
+However hugo has a better system for dependencies called modules. 
+Let you show you in short how to switch from git submodules to hugo modules!"
 image: ""
 tags: ["hugo"]
 ---
