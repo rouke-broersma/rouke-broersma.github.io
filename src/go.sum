@@ -4,3 +4,5 @@ github.com/martignoni/hugo-notice v0.0.0-20201231104550-13be940d0209 h1:m9TZEJM3
 github.com/martignoni/hugo-notice v0.0.0-20201231104550-13be940d0209/go.mod h1:k+PSLmVlZC5iWWxLLOSDQetCCeeqKZQvQJ+AXLg6X1A=
 github.com/msfjarvis/hugo-social-metadata v1.0.0 h1:mfLnus8iznPGiyFkJC93eCWr1PrdiNyv2BSONX1ZQVg=
 github.com/msfjarvis/hugo-social-metadata v1.0.0/go.mod h1:VfkrQTa9Gvdja58swLlBZz2/7ZEoj5nk9xt0pJAhfVo=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20210524182235-6b8a7b563ea1 h1:X1eJWXuuDw7b5zxlxesY9NumUYPuFxYRrXin/gBaigc=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20210524182235-6b8a7b563ea1/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
