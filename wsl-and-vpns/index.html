@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>wsl - Rouke&#39;s Blog</title>
+  <title>Wsl and Vpn&#39;s - Rouke&#39;s Blog</title>
+  <meta name="description" content="Why you get TLS handshake errors in WSL">
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,15 +29,65 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/broersma.dev",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/broersma.dev\/wsl-and-vpns\/",
+          "name": "Wsl and vpn\u0027s"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Rouke Broersma"
+  },
+  "headline": "Wsl and Vpn\u0027s",
+  "description" : "WSL does not play nice with VPN\u0026rsquo;s and you likely won\u0026rsquo;t realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you\u0026rsquo;re having issues!",
+  "inLanguage" : "en",
+  "wordCount":  378 ,
+  "datePublished" : "2021-08-21T14:33:33",
+  "dateModified" : "2021-08-21T14:33:33",
+  "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
+  "keywords" : [ "wsl" ],
+  "mainEntityOfPage" : "https:\/\/broersma.dev\/wsl-and-vpns\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/broersma.dev",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/broersma.dev\/images\/icon-circle.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="wsl" />
-<meta property="og:image" content="https://broersma.dev/images/icon-circle.png" />
-<meta property="og:url" content="https://broersma.dev/tags/wsl/" />
+<meta property="og:title" content="Wsl and Vpn&#39;s" />
+<meta property="og:description" content="Why you get TLS handshake errors in WSL">
+<meta property="og:image" content="https://broersma.dev/content/wsl-and-vpns/unsecure-connection-warn.png" />
+<meta property="og:url" content="https://broersma.dev/wsl-and-vpns/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke&#39;s Blog" />
 
-  <meta name="twitter:title" content="wsl" />
-  <meta name="twitter:image" content="https://broersma.dev/images/icon-circle.png" />
+  <meta name="twitter:title" content="Wsl and Vpn&#39;s" />
+  <meta name="twitter:description" content="Why you get TLS handshake errors in WSL">
+  <meta name="twitter:image" content="https://broersma.dev/content/wsl-and-vpns/unsecure-connection-warn.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@roukebroersma" />
   <meta name="twitter:creator" content="@roukebroersma" />
@@ -65,17 +116,17 @@
 <meta name="twitter:site" content="@roukebroersma" key="twhandle" />
 
 
-<title>wsl &middot; Rouke&#39;s Blog</title>
+<title>Wsl and Vpn&#39;s &middot; Rouke&#39;s Blog</title>
 <meta name="description" content="" />
 
-<meta name="keywords" content="short, blog, broersma, tech, azure, dotnet, mutation-testing" />
+<meta name="keywords" content="wsl," />
 
-<meta property="og:url" content="https://broersma.dev/tags/wsl/" />
-<meta property="og:title" content="wsl &middot; Rouke&#39;s Blog" />
+<meta property="og:url" content="https://broersma.dev/wsl-and-vpns/" />
+<meta property="og:title" content="Wsl and Vpn&#39;s &middot; Rouke&#39;s Blog" />
 
 <meta name="og:description" content="I write short(ish) blogposts about things that interest me." />
 
-<meta name="twitter:url" content="https://broersma.dev/tags/wsl/" />
+<meta name="twitter:url" content="https://broersma.dev/wsl-and-vpns/" />
 
 <meta property="og:image" content="https://broersma.devimages/icon-circle.png" key="ogimage" />
 
@@ -242,47 +293,18 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>wsl</h1>
-              
-              
-                <hr class="small">
+                <h1>Wsl and Vpn&#39;s</h1>
               
               
               
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://broersma.dev/wsl-and-vpns/">
-        <h2 class="post-title">Wsl and Vpn&#39;s</h2>
-        
-        <h3 class="post-subtitle">
-            Why you get TLS handshake errors in WSL
-        </h3>
-        
-        
-        <img src="https://broersma.dev/content/wsl-and-vpns/unsecure-connection-warn.png" alt="Wsl and Vpn&#39;s" class="img-title" />
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
+                
+                  <h2 class="post-subheading">Why you get TLS handshake errors in WSL</h2>
+                
+              
+              
+                <span class="post-meta">
   
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on 21 August 2021
@@ -294,118 +316,129 @@ if (!doNotTrack) {
 </span>
 
 
-    </p>
-    <div class="post-entry">
-        
-            WSL does not play nice with VPN&rsquo;s and you likely won&rsquo;t realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you&rsquo;re having issues!
-            <a href="https://broersma.dev/wsl-and-vpns/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/">
-        <h2 class="post-title">How to Use Dedicated Disks in Wsl</h2>
-        
-        
-        <img src="https://broersma.dev/content/how-to-use-dedicated-disks-in-wsl/explorer.png" alt="How to Use Dedicated Disks in Wsl" class="img-title" />
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 8 June 2021
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-            When you access Windows files from WSL there is a large price to pay. But if you have important or a lot of data you use in WSL it can be a problem to only use the WSL root filesystem you get by default. It lives only in WSL (with an awkward way to access it from Windows) and to me feels like temporary storage you could lose at any time. Wouldn&rsquo;t it be great if you could use an external or extra hard disk in WSL while not having to pay the price? Well, now you can!
-            <a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/">
-        <h2 class="post-title">How to Start Wsl in Linux User Home</h2>
-        
-        <h3 class="post-subtitle">
-            When using Windows Terminal
-        </h3>
-        
-        
-        <img src="https://broersma.dev/content/how-to-start-wsl-in-linux-homedir/gia-oris-start-here-unsplash.jpg" alt="How to Start Wsl in Linux User Home" class="img-title" />
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 24 May 2021
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-            While using the Windows Terminal with WSL and Ubuntu I was bothered by the fact that I would always start in my Windows user home. Luckily there are ways to fix that.
-            <a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
+              
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>When I first started out with WSL I tried to install the <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt">Azure CLI</a>. Strangely I kept having TLS handshake errors while trying to install the microsoft package repository private key. As a workaround I used the macOS package manager <a href="https://brew.sh/">Brew</a> instead.
+This solved my immediate problem but over the next few weeks I kept having to perform certain actions in Windows instead of in WSL because on some domains I would have TLS handshake issues and on others I would not. This was getting ridiculous.
+Eventually I realized I did not have this problem when not connected to my corporate VPN! With this knowledge I started looking for a solution and soon enough I found <a href="https://github.com/microsoft/WSL/issues/4698">this</a> GitHub issue. After reading plenty of comments I found the solution <a href="https://github.com/microsoft/WSL/issues/4698#issuecomment-814259640">here</a>.</p>
+<p>The problem is likely that the <a href="https://homenetworkgeek.com/mtu-size/">MTU</a> (maximum single packet size) set by your VPN operator is not the default <code>1500</code> of Ethernet, while the default of the WSL network interface is set to <code>1500</code>. This causes packets from your WSL distro to be larger than the maximum allowed by your VPN. This causes your VPN network adapter to drop/lose/block some of your packets or parts of the packets. This malforms the TLS traffic which causes a failed handshake. Fix the MTU value of the WSL network adapter and your should be good to go. To fix this:</p>
+<p>TLDR;</p>
+<p>In windows find out what the MTU value is of your VPN network adapter by opening PowerShell as Administrator:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">netsh.exe interface ipv4 show interfaces
+</code></pre></div><p>The result should look a little something like this:</p>
+<p><img src="https://broersma.dev/content/wsl-and-vpns/windows-network-adapters.png" alt="List of network adapters"></p>
+<p>From this list pick your VPN and look at the MTU column to find the MTU value. In my case the MTU is <code>1400</code>.</p>
+<p>Now in your WSL open your <code>~/.profile</code> or <code>~/.zprofile</code> (or whichever shell dotfile you prefer in your system) and add the following line:</p>
+<div class="highlight"><pre class="chroma"><code class="language-zsh" data-lang="zsh">sudo ip link <span class="nb">set</span> dev eth0 mtu <span class="m">1400</span>
+</code></pre></div><p>And there you go, no more TLS handshake errors!</p>
+<p> </p>
+<style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative}</style>
+<svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg><div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>If you still have TLS handshake errors or if you&rsquo;re experiencing other networking issues, try the suggestions in this blog post by <a href="https://bscstudent.netlify.app/wsl-troubleshooting/">Baruch Odem</a>. I did not need this but perhaps it is useful to you.</p></div>
+
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f&amp;text=Wsl%20and%20Vpn%27s&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f&amp;title=Wsl%20and%20Vpn%27s" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f&amp;title=Wsl%20and%20Vpn%27s" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f&amp;title=Wsl%20and%20Vpn%27s" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fbroersma.dev%2fwsl-and-vpns%2f&amp;description=Wsl%20and%20Vpn%27s" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
   </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/" data-toggle="tooltip" data-placement="top" title="How to Use Dedicated Disks in Wsl">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
 
       
 <footer>
@@ -456,7 +489,7 @@ if (!doNotTrack) {
               </li>
           
           <li>
-            <a href="https://broersma.dev/tags/wsl/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
@@ -485,7 +518,7 @@ if (!doNotTrack) {
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/cf5a9c2c30dc5f3dd763eb3ba82dd435ae42a0e4">cf5a9c2c</a>]
         </p>
       </div>
     </div>
