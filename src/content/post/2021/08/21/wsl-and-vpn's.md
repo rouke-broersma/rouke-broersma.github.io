@@ -1,9 +1,9 @@
 ---
-title: "Wsl and Vpn's"
+title: "Wsl and Vpns"
 date: 2021-08-21T14:33:33Z
 subtitle: "Why you get TLS handshake errors in WSL"
 image: "/content/wsl-and-vpns/unsecure-connection-warn.png"
-summary: "WSL does not play nice with VPN's and you likely won't realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you're having issues!"
+summary: "WSL does not play nice with VPNs and you likely will not realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you are having issues!"
 tags: ["wsl"]
 ---
 
