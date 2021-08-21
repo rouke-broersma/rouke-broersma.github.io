@@ -9,12 +9,12 @@
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
     <lastBuildDate>Sat, 21 Aug 2021 14:33:33 +0000</lastBuildDate><atom:link href="https://broersma.dev/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Wsl and Vpn&#39;s</title>
+      <title>Wsl and Vpns</title>
       <link>https://broersma.dev/wsl-and-vpns/</link>
       <pubDate>Sat, 21 Aug 2021 14:33:33 +0000</pubDate>
       <author>rouke@broersma.dev (Rouke Broersma)</author>
       <guid>https://broersma.dev/wsl-and-vpns/</guid>
-      <description>WSL does not play nice with VPN&amp;rsquo;s and you likely won&amp;rsquo;t realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you&amp;rsquo;re having issues!</description>
+      <description>WSL does not play nice with VPNs and you likely will not realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you are having issues!</description>
     </item>
     
     <item>
