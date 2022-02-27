@@ -1,0 +1,5 @@
+[highlight]
+    codeFences = true
+    guessSyntax = true
+    style = 'vs'
+    lineNumbersInTable = false

@@ -8,8 +8,3 @@ publishdir = "/dist"
 canonifyURLs = true
 enableGitInfo = true
 enableEmoji = true
-
-# Syntax highlighting
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
