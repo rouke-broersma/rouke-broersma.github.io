@@ -340,9 +340,9 @@ if (!doNotTrack) {
       <article role="main" class="blog-post">
         <p>The <a href="https://gohugo.io/getting-started/quick-start/">tutorial</a> for Hugo tells you how to install themes in step 3.
 This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-<span class="nb">echo</span> <span class="nv">theme</span> <span class="o">=</span> <span class="se">\&#34;</span>ananke<span class="se">\&#34;</span> &gt;&gt; config.toml
+echo theme = <span style="color:#a31515">\&#34;</span>ananke<span style="color:#a31515">\&#34;</span> &gt;&gt; config.toml
 </code></pre></div><p>This has some problems.
 Mainly that I don&rsquo;t want to learn how to work with git submodules 😄 but also.. I don&rsquo;t understand git submodules 🙄.
 But I don&rsquo;t have to! Apparently Hugo has created the concept of <a href="https://gohugo.io/hugo-modules/use-modules/">Hugo modules</a>.
@@ -351,7 +351,7 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
 <p>Firstly you have to make your site a Go module, hugo can help you with this.</p>
 <p><code>hugo mod init &lt;any-name-you-want&gt;</code></p>
 <p>Then you add your themes/modules to a hugo module config.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[[imports]]
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[[imports]]
     path = &#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;
 </code></pre></div><p><em>Notice that the path does not include <code>https://</code> or <code>.git</code>. Don&rsquo;t add them, it won&rsquo;t work.</em></p>
 <p>Lastly delete the git submodules in <code>/themes</code>, git submodule config (<code>.gitsubmodules</code> file) and the <code>theme = &quot;ananke&quot;</code> from <code>config.toml</code>. Done!</p>
@@ -446,9 +446,22 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
       
 
       
+        <script src="https://giscus.app/client.js"
+        data-repo="rouke-broersma/rouke-broersma.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNTQzNzgxNjg="
+        data-category="Comments"
+        data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyODY1Mjk4"
+        data-mapping=""
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
       
-        
-        
       
 
     </div>

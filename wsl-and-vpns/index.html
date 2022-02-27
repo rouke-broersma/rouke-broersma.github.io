@@ -342,12 +342,12 @@ Eventually I realized I did not have this problem when not connected to my corpo
 <p>The problem is likely that the <a href="https://homenetworkgeek.com/mtu-size/">MTU</a> (maximum single packet size) set by your VPN operator is not the default <code>1500</code> of Ethernet, while the default of the WSL network interface is set to <code>1500</code>. This causes packets from your WSL distro to be larger than the maximum allowed by your VPN. This causes your VPN network adapter to drop/lose/block some of your packets or parts of the packets. This malforms the TLS traffic which causes a failed handshake. Fix the MTU value of the WSL network adapter and your should be good to go. To fix this:</p>
 <p>TLDR;</p>
 <p>In windows find out what the MTU value is of your VPN network adapter by opening PowerShell as Administrator:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">netsh.exe interface ipv4 show interfaces
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">netsh.exe interface ipv4 show interfaces
 </code></pre></div><p>The result should look a little something like this:</p>
 <p><img src="https://broersma.dev/content/wsl-and-vpns/windows-network-adapters.png" alt="List of network adapters"></p>
 <p>From this list pick your VPN and look at the MTU column to find the MTU value. In my case the MTU is <code>1400</code>.</p>
 <p>Now in your WSL open your <code>~/.profile</code> or <code>~/.zprofile</code> (or whichever shell dotfile you prefer in your system) and add the following line:</p>
-<div class="highlight"><pre class="chroma"><code class="language-zsh" data-lang="zsh">sudo ip link <span class="nb">set</span> dev eth0 mtu <span class="m">1400</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">sudo ip link set dev eth0 mtu 1400
 </code></pre></div><p>And there you go, no more TLS handshake errors!</p>
 <p> </p>
 <style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative}</style>
@@ -436,9 +436,22 @@ Eventually I realized I did not have this problem when not connected to my corpo
       
 
       
+        <script src="https://giscus.app/client.js"
+        data-repo="rouke-broersma/rouke-broersma.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNTQzNzgxNjg="
+        data-category="Comments"
+        data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyODY1Mjk4"
+        data-mapping=""
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
       
-        
-        
       
 
     </div>

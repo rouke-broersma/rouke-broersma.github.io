@@ -352,7 +352,7 @@ Microsoft is currently working on enabling mounting disks in WSL natively and th
 <p>So you&rsquo;ve signed up for the windows insider program and you&rsquo;re done installing Windows Updates. You have the fancy new Windows features like the new explorer icons (they look pretty good by the way). How do you now mount your disk?</p>
 <p>Well that part is actually pretty simple!</p>
 <p>First identify your Windows &lsquo;physical&rsquo; diskpath by starting Powershell as administrator and using the command <code>wmic diskdrive list brief</code>. The output should look a little something like this.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wmic diskdrive list brief
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wmic diskdrive list brief
 Caption                      DeviceID            Model                        Partitions  Size
 Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE2  Samsung SSD 860 EVO 500GB    0           500105249280
 ST2000DM006-2DM164           \\.\PHYSICALDRIVE4  ST2000DM006-2DM164           1           2000396321280
@@ -362,17 +362,17 @@ Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE1  Samsung SSD 860 EVO 500GB    1 
 Samsung SSD 840 EVO 250GB    \\.\PHYSICALDRIVE0  Samsung SSD 840 EVO 250GB    5           250056737280
 </code></pre></div><p>In my case my disk is <code>WD Elements 107C USB Device</code> at <code>\\.\PHYSICALDRIVE5</code>.</p>
 <p>As you can see it has only one partition. I happen to know it is of type Ext4 which the WSL kernel can natively understand so all I have to do to mount my disk is run</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5
 </code></pre></div><p>And now the disk will be mounted in my WSL at /mnt/wsl/PHYSICALDRIVE5</p>
 <h3 id="going-deeper">Going deeper</h3>
 <p>If you have more than one partition you will have to specify the partition number you want to mount like so</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --partition 3
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --partition 3
 </code></pre></div><p>This does mean you need to know which partition contains your Linux filesystem.</p>
 <p>To find that out we can mount the disk as &lsquo;bare&rsquo; which basically means that Windows passes through the disk to WSL but does not actually try to mount it to the Linux filesystem.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --bare
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --bare
 </code></pre></div><p>Then identify the device number for your hard disk with <code>lsblk</code></p>
 <p>The output will look something like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜  ~ lsblk
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0    7:0    0 429.6M  1 loop /mnt/wsl/docker-desktop/cli-tools
 loop1    7:1    0 343.4M  1 loop
@@ -385,7 +385,7 @@ sde      8:64   0   256G  0 disk /
 </code></pre></div><p>If you don&rsquo;t immediately recognize your disk from this list based on the size you can use the following command to get all physical drives attached:</p>
 <p><code>sudo lshw -class disk</code></p>
 <p>The output should look like this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜  ~ sudo lshw -class disk
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ sudo lshw -class disk
   *-disk:3
        description: SCSI Disk
        product: Elements 107C
@@ -400,7 +400,7 @@ sde      8:64   0   256G  0 disk /
        configuration: ansiversion=6 logicalsectorsize=4096 sectorsize=4096 signature=db4bf07b
 </code></pre></div><p>Here you can find the disk by it&rsquo;s name and model which you can compare with the <code>wmic diskdrive list brief</code> command from Windows. See the disk is listed as <code>/dev/sdd</code> for me.</p>
 <p>So now we know which device is our disk but we still don&rsquo;t know anything about the partitions on the disk. For that we need  to go back to <code>lsblk</code>. Find our disk in the list based on the device id (<code>/dev/sdd</code>). Now for every partition listed for this device you have to run <code>blkid &lt;device-id&gt;&lt;partition&gt;</code>. In my case since I have only one partition this is as simple as <code>sudo blkid /dev/sdd1</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜  ~ sudo blkid /dev/sdd1
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ sudo blkid /dev/sdd1
 /dev/sdd1: UUID=&#34;6d7e2d05-454d-d701-605c-2d05454dd701&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;03f49424-1d7a-324e-84f6-2f405947782b&#34;
 </code></pre></div><p>If you have multiple partitions you will have to run this command for each of them untill you find the partition you need.</p>
 <p>As you can see in the output my partition is of type ext4 which means it is supported.</p>
@@ -408,7 +408,7 @@ sde      8:64   0   256G  0 disk /
 <h3 id="bonus-points">Bonus points</h3>
 <p>As we saw earlier WSL mounts the partitions automatically in <code>/mnt/wsl</code> based on the physical device name and the partition id. I wasn&rsquo;t particularly happy with this default as a physical device name tells me nothing about which disk it is. No matter though because as we learned we can mount the disk <code>bare</code> and have the device show up in Linux anyway. Using this information and the information from <code>blkid /dev/sdd1</code> I realized that I could simply mount the partitions in Linux instead!</p>
 <p>First I created a mount point (directory) in <code>/mnt</code> called <code>data</code> with <code>mkdir /mnt/data</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">➜  ~ ls /mnt
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ ls /mnt
 b  c  d  data  e  g  wsl  wslg
 </code></pre></div><p>Then I edited /etc/fstab (the &lsquo;mount configuration&rsquo; file in linux) with nano: <code>sudo nano /etc/fstab</code> and added a line to mount my Linux partition on <code>/mnt/data</code>.</p>
 <p>The entry looks like this:</p>
@@ -502,9 +502,22 @@ b  c  d  data  e  g  wsl  wslg
       
 
       
+        <script src="https://giscus.app/client.js"
+        data-repo="rouke-broersma/rouke-broersma.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzNTQzNzgxNjg="
+        data-category="Comments"
+        data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyODY1Mjk4"
+        data-mapping=""
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
       
-        
-        
       
 
     </div>
