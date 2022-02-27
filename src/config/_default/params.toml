@@ -11,7 +11,6 @@ selfHosted = false # Search icon is not functional in self hosted mode..
 mainSections = ["post"]
 hideAuthor = true
 socialShare = true
-comments = true
 gcse = "ddc7e117c445f2ff2"
 commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
 
@@ -20,3 +19,9 @@ description = "I write short(ish) blogposts about things that interest me."
 keywords = "short, blog, broersma, tech, azure, dotnet, mutation-testing"
 twitterUsername = "@roukebroersma"
 socialImage = "images/icon-circle.png"
+
+# Giscus comments
+giscusRepo = "rouke-broersma/rouke-broersma.github.io"
+giscusRepoId = "MDEwOlJlcG9zaXRvcnkzNTQzNzgxNjg="
+giscusCategory = "Comments"
+giscusCategoryId = "MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyODY1Mjk4"

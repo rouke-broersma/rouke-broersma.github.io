@@ -3,8 +3,5 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
-# Disqus
-#disqusShortname = "broersma"
-
 # Google Analytics
 googleAnalytics = "G-MH72NCXF4W"

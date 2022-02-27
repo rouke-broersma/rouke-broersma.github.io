@@ -10,3 +10,9 @@ github.com/rouke-broersma/beautifulhugo v0.0.0-20220227162633-4ed8a0e37863 h1:65
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227162633-4ed8a0e37863/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227163115-7241c9e72ff5 h1:AweIax7l/9hTn+hphLiqoIo4h6FRWbGBr1DV22oRoYU=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227163115-7241c9e72ff5/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227231811-bdd27568c7a8 h1:m62tvwypxPSrITBYwEy9z71NDTViFf9JD/kiZf9GQuU=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227231811-bdd27568c7a8/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232201-e54de555db16 h1:7KtnAb/MrL+ZdD3TvLgzCuZyzsoi2K6F30dDcQp1TMw=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232201-e54de555db16/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232648-e680bb0bef79 h1:vnUvSkY6wQqzLoVK0FQ15/isNXBugEw8XRigCVz4umQ=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232648-e680bb0bef79/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
