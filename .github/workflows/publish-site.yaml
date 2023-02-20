@@ -32,4 +32,6 @@ jobs:
         if [[ -n $(git status -s) ]]; then
           git commit -am "Update to $GIT_COMMIT"
           git push -u origin gh-pages
+        else
+          echo "There were no changes, skipping.."
         fi
