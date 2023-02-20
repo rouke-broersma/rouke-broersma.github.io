@@ -30,8 +30,12 @@ jobs:
         rmdir dist
         git add .
         if [[ -n $(git status -s) ]]; then
+          echo ""
+          echo "Changes found, deploying"
+
           git commit -am "Update to $GIT_COMMIT"
           git push -u origin gh-pages
         else
+          echo ""
           echo "There were no changes, skipping.."
         fi
