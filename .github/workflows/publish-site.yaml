@@ -29,5 +29,7 @@ jobs:
         mv dist/* .
         rmdir dist
         git add .
-        git commit -am "Update to $GIT_COMMIT"
-        git push -u origin gh-pages
+        if [[ -n $(git status -s) ]]; then
+          git commit -am "Update to $GIT_COMMIT"
+          git push -u origin gh-pages
+        fi
