@@ -1,5 +1,7 @@
 github.com/martignoni/hugo-notice v0.0.0-20211113131149-2facc5d4d60d h1:x6MnT1jHtyVSuM6z6ea/0GhCa2PTqAf0AIyg4ijKGaA=
 github.com/martignoni/hugo-notice v0.0.0-20211113131149-2facc5d4d60d/go.mod h1:k+PSLmVlZC5iWWxLLOSDQetCCeeqKZQvQJ+AXLg6X1A=
+github.com/martignoni/hugo-notice v0.0.0-20220915151719-9571973877af h1:beo4H+y36B4t4wO4fu+rQI/tZDZB45VSLgKrpATezVs=
+github.com/martignoni/hugo-notice v0.0.0-20220915151719-9571973877af/go.mod h1:k+PSLmVlZC5iWWxLLOSDQetCCeeqKZQvQJ+AXLg6X1A=
 github.com/msfjarvis/hugo-social-metadata v1.0.0 h1:mfLnus8iznPGiyFkJC93eCWr1PrdiNyv2BSONX1ZQVg=
 github.com/msfjarvis/hugo-social-metadata v1.0.0/go.mod h1:VfkrQTa9Gvdja58swLlBZz2/7ZEoj5nk9xt0pJAhfVo=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227151000-305b42930997 h1:0XPlzeXcyNRfN629Mn5jvKiEKWnt+9W2HF/FwfO1fHM=
@@ -16,3 +18,7 @@ github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232201-e54de555db16 h1:7K
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232201-e54de555db16/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232648-e680bb0bef79 h1:vnUvSkY6wQqzLoVK0FQ15/isNXBugEw8XRigCVz4umQ=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20220227232648-e680bb0bef79/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20230220154858-e7b6e505e55e h1:iFKBdVKAGMTQUDFjc/Arj+aAAWqQwk/rUqKkCzf0KSI=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20230220154858-e7b6e505e55e/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20230220160722-25ee464ca5c4 h1:UYzmOoB7s4D4C7vvB5XVjy5MHVJXgEzuM+/QuudV5Kc=
+github.com/rouke-broersma/beautifulhugo v0.0.0-20230220160722-25ee464ca5c4/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
