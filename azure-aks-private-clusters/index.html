@@ -12,7 +12,7 @@
 
       <title>Azure Aks Private Clusters - Welcome</title>
 
-  <meta name="description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you’re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access.">
+  <meta name="description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you&rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access.">
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -61,9 +61,9 @@
     "name" : "Rouke Broersma"
   },
   "headline": "Azure Aks Private Clusters",
-  "description" : "When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you’re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access.",
+  "description" : "When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you\u0026rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access.",
   "inLanguage" : "en",
-  "wordCount":  1060 ,
+  "wordCount":  1033 ,
   "datePublished" : "2023-02-21T00:00:00",
   "dateModified" : "2023-02-20T20:39:47",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
@@ -83,14 +83,14 @@
 </script>
 
 <meta property="og:title" content="Azure Aks Private Clusters" />
-<meta property="og:description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you’re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access.">
+<meta property="og:description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you&rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access.">
 <meta property="og:image" content="https://broersma.dev/content/azure-aks-private-clusters/header_image_security.jpg" />
 <meta property="og:url" content="https://broersma.dev/azure-aks-private-clusters/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke&#39;s Blog" />
 
   <meta name="twitter:title" content="Azure Aks Private Clusters" />
-  <meta name="twitter:description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks …">
+  <meta name="twitter:description" content="When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public …">
   <meta name="twitter:image" content="https://broersma.dev/content/azure-aks-private-clusters/header_image_security.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@roukebroersma" />
@@ -334,11 +334,13 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <h3 id="what-is-the-point-of-aks-private-clusters">What is the point of AKS private clusters</h3>
-<p>When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you&rsquo;re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access. Most cloud providers provide mechanisms to limit access with IP whitelisting and <a href="https://docs.microsoft.com/en-us/azure/aks/private-clusters">private clusters</a> (API server has a private instead of a public IP).</p>
-<p>There are downsides to locking down access to your AKS API server. Locking down access means you need to be on the private network used by AKS to be able to manage the workloads you want to run on the cluster. There are many ways to gain network access, ranging from jump host virtual machines in the cluster to VPNs or even express routes. This can become a problem when you manage more than a single cluster. You risk having to connect multiple unrelated networks together through network peering and VPN gateways or express routes which adds the extra burden of having to solve overlapping network range issues as well. Or you need to manage jumphosts in every network you deploy AKS to, just so you can access the cluster. That is not ideal either.</p>
+<p>When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you&rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access. Most cloud providers provide mechanisms to limit access with IP whitelisting and <a href="https://docs.microsoft.com/en-us/azure/aks/private-clusters">private clusters</a> (API server has a private instead of a public IP).</p>
+<p>However, there are downsides to locking down access to your AKS API server. Locking down access means you need to be on the private network used by AKS to be able to manage the workloads you want to run on the cluster.
+There are many ways to gain network access, ranging from jump host virtual machines in the cluster to VPNs or even express routes. This can become a problem when you manage more than a single cluster.
+In addition to having to deal with overlapping network range concerns, the risk of having to connect multiple unrelated networks together through network peering, VPN gateways, or express routes adds another burden. Instead, simply to reach the cluster, you must manage jumphosts in each network where AKS is deployed. This is also not ideal.</p>
 <h3 id="azure-private-link">Azure private link</h3>
-<p>If you are familiar with azure private networks you probably know about azure private link, which AKS uses to enable the private cluster feature.
-For those that are not familiar, private link enables you to connect your azure resources to your azure private virtual networks so you can disable public networks access. With private link you can connect one azure resource to multiple (limits apply but are quite high) endpoints in private virtual networks across subscriptions, azure ad tenants and azure regions. This makes network setups for azure resources very flexible without traditional concerns like overlapping network space.</p>
+<p>If you are familiar with Azure private networks you probably know about Azure private link, which AKS uses to enable the private cluster feature.
+For those that are not familiar, private link enables you to connect your azure resources to your Azure private virtual networks so you can disable public networks access. With private link you can connect one Azure resource to multiple (limits apply but are quite high) endpoints in private virtual networks across subscriptions, Azure ad tenants and Azure regions. This makes network setups for Azure resources very flexible without traditional concerns like overlapping network space.</p>
 <p>Like me you might now think great! We create the private link endpoints for multiple private AKS clusters in the same virtual network so you can manage our clusters from a single location! Now how would we go and do that?</p>
 <h3 id="lets-create-a-private-cluster">Let&rsquo;s create a private cluster</h3>
 <p>I will be using the az-cli for the most part. Let&rsquo;s create a small example cluster.</p>
@@ -359,8 +361,8 @@ kubectl get nodes
   couldn<span style="">&#39;</span>t get current server API group list: Get
 </code></pre></div><p>This is because our machine can&rsquo;t resolve the DNS record for the private API server.
 If you look in your subscription you will see a new resource group prefixed with MC_. This resource group is managed by AKS, and contains resources such as the cluster nodes, but also a private DNS zone, virtual network and private endpoint connecting to the API server.</p>
-<p>By default AKS also creates a record pointing to our private IP in the azure public DNS.
-If you query azure for the public fqdn</p>
+<p>By default AKS also creates a record pointing to our private IP in the Azure public DNS.
+If you query Azure for the public fqdn</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">az aks show --name $aksName \
      --resource-group $rgName --query &#34;fqdn&#34;
 </code></pre></div><p>and pass the result to nslookup and you' ll get the private IP of the api server, which is also configured in the private dns zone. Neat right? Fortunately you can disable this at cluster creation.</p>
@@ -593,7 +595,7 @@ az network private-endpoint create --resource-group hub --name pe-$aksName <span
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/41c508e61d239fa939ad164fc73d6abab3c9c0d3">41c508e6</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/898b430eb53f45b31195d3d90cc30377ad794322">898b430e</a>]
         </p>
       </div>
     </div>
