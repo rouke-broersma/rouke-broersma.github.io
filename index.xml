@@ -14,7 +14,7 @@
       <pubDate>Mon, 20 Feb 2023 20:39:47 +0000</pubDate>
       <author>rouke@broersma.dev (Rouke Broersma)</author>
       <guid>https://broersma.dev/azure-aks-private-clusters/</guid>
-      <description>What is the point of AKS private clusters When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you&amp;rsquo;re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access.</description>
+      <description>When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you’re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access.</description>
     </item>
     
     <item>
