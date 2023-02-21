@@ -4,7 +4,7 @@ date: 2023-02-20T20:39:47Z
 publishDate: 2023-02-21
 subtitle: ""
 image: "/content/azure-aks-private-clusters/header_image_security.jpg"
-summary: ""
+summary: "When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you’re giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access."
 tags: ["Azure", "AKS", "Kubernetes", "Private Link", "Private Endpoint"]
 series: ["Private Link"]
 ---
