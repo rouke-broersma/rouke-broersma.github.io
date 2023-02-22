@@ -22,8 +22,8 @@ else
 fi
 
 docker run --rm \
-  --volume="$(pwd):/project" \
-  --workdir="/project/src" \
+  --volume="$(pwd):/src" \
+  --workdir="/src/src" \
   klakegg/hugo:ext-alpine \
   new "$title"
 sudo chown -R "$USER:$USER" src
