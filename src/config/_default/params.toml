@@ -1,9 +1,10 @@
-homeTitle = "Welcome"
+homeTitle = "Rouke's Blog"
 subtitle = "Recent posts"
 logo = "images/icon-circle.png"
 favicon = "favicon.ico"
 dateFormat = "2 January 2006"
 rss = true
+showRelatedPosts = true
 
 # beautiful-hugo settings
 since = 2021
@@ -16,7 +17,7 @@ commit = "https://github.com/rouke-broersma/rouke-broersma.github.io/tree/"
 
 # hugo-social-metadata settings
 description = "I write short(ish) blogposts about things that interest me."
-keywords = "short, blog, broersma, tech, azure, dotnet, mutation-testing"
+keywords = "short, blog, broersma, tech, azure, dotnet, mutation-testing, stryker"
 twitterUsername = "@roukebroersma"
 socialImage = "images/icon-circle.png"
 

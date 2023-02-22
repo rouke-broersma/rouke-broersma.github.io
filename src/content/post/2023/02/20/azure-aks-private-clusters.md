@@ -4,21 +4,21 @@ date: 2023-02-20T20:39:47Z
 publishDate: 2023-02-21
 subtitle: ""
 image: "/content/azure-aks-private-clusters/header_image_security.jpg"
-summary: ""
+summary: "When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you're giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access."
 tags: ["Azure", "AKS", "Kubernetes", "Private Link", "Private Endpoint"]
 series: ["Private Link"]
 ---
 
-### What is the point of AKS private clusters
+When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you're giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access. Most cloud providers provide mechanisms to limit access with IP whitelisting and [private clusters](https://docs.microsoft.com/en-us/azure/aks/private-clusters) (API server has a private instead of a public IP).
 
-When using Kubernetes it is considered good practice to limit API server access as much as possible. When using a cloud managed kubernetes offering you are not by default in control of the networks used by kubernetes. To provide you access to your cluster the default configuration usually exposes the API server on the public internet. This is fine when you're giving it a try but once you start using kubernetes more seriously you will probably want to start locking down access. Most cloud providers provide mechanisms to limit access with IP whitelisting and [private clusters](https://docs.microsoft.com/en-us/azure/aks/private-clusters) (API server has a private instead of a public IP).
-
-There are downsides to locking down access to your AKS API server. Locking down access means you need to be on the private network used by AKS to be able to manage the workloads you want to run on the cluster. There are many ways to gain network access, ranging from jump host virtual machines in the cluster to VPNs or even express routes. This can become a problem when you manage more than a single cluster. You risk having to connect multiple unrelated networks together through network peering and VPN gateways or express routes which adds the extra burden of having to solve overlapping network range issues as well. Or you need to manage jumphosts in every network you deploy AKS to, just so you can access the cluster. That is not ideal either.
+However, there are downsides to locking down access to your AKS API server. Locking down access means you need to be on the private network used by AKS to be able to manage the workloads you want to run on the cluster. 
+There are many ways to gain network access, ranging from jump host virtual machines in the cluster to VPNs or even express routes. This can become a problem when you manage more than a single cluster. 
+In addition to having to deal with overlapping network range concerns, the risk of having to connect multiple unrelated networks together through network peering, VPN gateways, or express routes adds another burden. Instead, simply to reach the cluster, you must manage jumphosts in each network where AKS is deployed. This is also not ideal.
 
 ### Azure private link
 
-If you are familiar with azure private networks you probably know about azure private link, which AKS uses to enable the private cluster feature.
-For those that are not familiar, private link enables you to connect your azure resources to your azure private virtual networks so you can disable public networks access. With private link you can connect one azure resource to multiple (limits apply but are quite high) endpoints in private virtual networks across subscriptions, azure ad tenants and azure regions. This makes network setups for azure resources very flexible without traditional concerns like overlapping network space. 
+If you are familiar with Azure private networks you probably know about Azure private link, which AKS uses to enable the private cluster feature.
+For those that are not familiar, private link enables you to connect your azure resources to your Azure private virtual networks so you can disable public networks access. With private link you can connect one Azure resource to multiple (limits apply but are quite high) endpoints in private virtual networks across subscriptions, Azure ad tenants and Azure regions. This makes network setups for Azure resources very flexible without traditional concerns like overlapping network space. 
 
 Like me you might now think great! We create the private link endpoints for multiple private AKS clusters in the same virtual network so you can manage our clusters from a single location! Now how would we go and do that?
 
@@ -51,8 +51,8 @@ kubectl get nodes
 This is because our machine can't resolve the DNS record for the private API server. 
 If you look in your subscription you will see a new resource group prefixed with MC_. This resource group is managed by AKS, and contains resources such as the cluster nodes, but also a private DNS zone, virtual network and private endpoint connecting to the API server.
 
-By default AKS also creates a record pointing to our private IP in the azure public DNS.
-If you query azure for the public fqdn  
+By default AKS also creates a record pointing to our private IP in the Azure public DNS.
+If you query Azure for the public fqdn  
 ```
 az aks show --name $aksName \
      --resource-group $rgName --query "fqdn"
