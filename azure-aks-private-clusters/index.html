@@ -96,7 +96,7 @@
   <meta name="twitter:site" content="@roukebroersma" />
   <meta name="twitter:creator" content="@roukebroersma" />
   <link href='https://broersma.dev/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.107.0">
   <link rel="alternate" href="https://broersma.dev/index.xml" type="application/rss+xml" title="Rouke Broersma"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://broersma.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -343,54 +343,54 @@ For those that are not familiar, private link enables you to connect your azure 
 <p>Like me you might now think great! We create the private link endpoints for multiple private AKS clusters in the same virtual network so you can manage our clusters from a single location! Now how would we go and do that?</p>
 <h3 id="lets-create-a-private-cluster">Let&rsquo;s create a private cluster</h3>
 <p>I will be using the az-cli for the most part. Let&rsquo;s create a small example cluster.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az login --tenant broersma.dev
-az account set -s VS Enterprise
-
-rgName=<span style="color:#a31515">&#34;private-aks&#34;</span>
-az group create --location westeurope --name $rgName
-
-<span style="color:#008000"># create AKS with private cluster enable</span>
-aksName=<span style="color:#a31515">&#34;private-aks-broersma&#34;</span>
-az aks create --namen $aksName --resource-group $rgName <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>    --load-balancer-sku standard --node-count 1 <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>    --enable-private-cluster --no-ssh-key
-</code></pre></div><p>If you now download the kubecontext and try to connect you will not be able to.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az aks get-credentials --name private-aks-broersma --resource-group private-aks
-kubectl get nodes
-  couldn<span style="">&#39;</span>t get current server API group list: Get
-</code></pre></div><p>This is because our machine can&rsquo;t resolve the DNS record for the private API server.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login --tenant broersma.dev
+</span></span><span style="display:flex;"><span>az account set -s VS Enterprise
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rgName=<span style="color:#a31515">&#34;private-aks&#34;</span>
+</span></span><span style="display:flex;"><span>az group create --location westeurope --name $rgName
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#008000"># create AKS with private cluster enable</span>
+</span></span><span style="display:flex;"><span>aksName=<span style="color:#a31515">&#34;private-aks-broersma&#34;</span>
+</span></span><span style="display:flex;"><span>az aks create --namen $aksName --resource-group $rgName <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>    --load-balancer-sku standard --node-count 1 <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>    --enable-private-cluster --no-ssh-key
+</span></span></code></pre></div><p>If you now download the kubecontext and try to connect you will not be able to.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az aks get-credentials --name private-aks-broersma --resource-group private-aks
+</span></span><span style="display:flex;"><span>kubectl get nodes
+</span></span><span style="display:flex;"><span>  couldn<span style="">&#39;</span>t get current server API group list: Get
+</span></span></code></pre></div><p>This is because our machine can&rsquo;t resolve the DNS record for the private API server.
 If you look in your subscription you will see a new resource group prefixed with MC_. This resource group is managed by AKS, and contains resources such as the cluster nodes, but also a private DNS zone, virtual network and private endpoint connecting to the API server.</p>
 <p>By default AKS also creates a record pointing to our private IP in the Azure public DNS.
 If you query Azure for the public fqdn</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">az aks show --name $aksName \
-     --resource-group $rgName --query &#34;fqdn&#34;
-</code></pre></div><p>and pass the result to nslookup and you' ll get the private IP of the api server, which is also configured in the private dns zone. Neat right? Fortunately you can disable this at cluster creation.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>az aks show --name $aksName \
+</span></span><span style="display:flex;"><span>     --resource-group $rgName --query &#34;fqdn&#34;
+</span></span></code></pre></div><p>and pass the result to nslookup and you&rsquo; ll get the private IP of the api server, which is also configured in the private dns zone. Neat right? Fortunately you can disable this at cluster creation.</p>
 <h3 id="connecting-to-our-private-cluster">Connecting to our private cluster</h3>
 <p>As said before, you can now connect to the cluster by deploying a jump host connected to the AKS network. The jump host will automatically pick up the DNS record for the private IP and use the private endpoint to connect to the API server. But I already have a VPN setup in another tenant I&rsquo;m using. It would be much more convenient not to mention cheaper to use my existing setup, so let&rsquo;s create a private endpoint to my AKS cluster.</p>
 <p>We will need to target the subresource (group-id) &ldquo;management&rdquo; and we will have to choose manual approval since we are creating a cross-tenant private endpoint.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000"># we&#39;re going to need the ID later</span>
-resourceId=<span style="color:#00f">$(</span>az aks show --name $aksName --resource-group private-aks --query <span style="color:#a31515">&#34;id&#34;</span><span style="color:#00f">)</span>
-
-az login --tenant other.broersma.dev
-az account set -s VS Enterprise Other
-
-az network private-endpoint create --resource-group hub --name pe-$aksName <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>    --connection-name $aksName <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>    --vnet-name vnet-hub --subnet aks-clusters --manual-request --group-id <span style="color:#a31515">&#34;management&#34;</span> <span style="color:#a31515">\
-</span><span style="color:#a31515"></span>    --private-connection-resource-id $resourceId
-</code></pre></div><p>And there we go, the private endpoint gets created! Of course since we created the private endpoint with manual approval, we will now have to approve the endpoint. You can confirm this by going to the private endpoint, you&rsquo;ll see the Connection status listed as &lsquo;Pending&rsquo;.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#008000"># we&#39;re going to need the ID later</span>
+</span></span><span style="display:flex;"><span>resourceId=<span style="color:#00f">$(</span>az aks show --name $aksName --resource-group private-aks --query <span style="color:#a31515">&#34;id&#34;</span><span style="color:#00f">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>az login --tenant other.broersma.dev
+</span></span><span style="display:flex;"><span>az account set -s VS Enterprise Other
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>az network private-endpoint create --resource-group hub --name pe-$aksName <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>    --connection-name $aksName <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>    --vnet-name vnet-hub --subnet aks-clusters --manual-request --group-id <span style="color:#a31515">&#34;management&#34;</span> <span style="color:#a31515">\
+</span></span></span><span style="display:flex;"><span><span style="color:#a31515"></span>    --private-connection-resource-id $resourceId
+</span></span></code></pre></div><p>And there we go, the private endpoint gets created! Of course since we created the private endpoint with manual approval, we will now have to approve the endpoint. You can confirm this by going to the private endpoint, you&rsquo;ll see the Connection status listed as &lsquo;Pending&rsquo;.</p>
 <p>If you&rsquo;ve worked with manual approved private endpoints before you will likely think to go to <a href="https://portal.azure.com/#view/Microsoft_Azure_Network/PrivateLinkCenterBlade/~/pendingconnections">the private link center</a> to perform the manual approval. However something stange is going on. We can see that the private endpoint is created and is pending approval, but we see no evidence of this on the target side.</p>
 <p>The reason is that we didn&rsquo;t actually create a private endpoint to our AKS resource. We created a private endpoint to the managed API server which is a part of the Microsoft managed control plane. This resource is not actually in our control, so we can&rsquo;t approve the endpoint!</p>
 <p>No worries you might think, we&rsquo;ll use the az cli to approve the endpoint. Let&rsquo;s give that a shot!</p>
 <p>However if we look at the docs we immediately have a new problem, <a href="https://learn.microsoft.com/en-us/cli/azure/network/private-endpoint-connection?view=azure-cli-latest#az-network-private-endpoint-connection-approve">az network private-endpoint-connection approve</a> requires an id which we don&rsquo;t have. The alternative method using the resource group, resource name and type is problematic because our resource type is not in the allowed list of resource types.</p>
 <p>Let&rsquo;s try anyway.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">az network private-endpoint-connection approve \
-    --name $aksName --resource-name $aksName --resource-group $rgName \
-    --type &#34;Microsoft.ContainerService/managedClusters&#34;
-
-  az network private-endpoint-connection approve: 
-    &#39;Microsoft.ContainerService/managedClusters&#39; is not a valid value for &#39;--type&#39;.
-</code></pre></div><p>Unfortunately no, we&rsquo;re simply not allowed..</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>az network private-endpoint-connection approve \
+</span></span><span style="display:flex;"><span>    --name $aksName --resource-name $aksName --resource-group $rgName \
+</span></span><span style="display:flex;"><span>    --type &#34;Microsoft.ContainerService/managedClusters&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  az network private-endpoint-connection approve: 
+</span></span><span style="display:flex;"><span>    &#39;Microsoft.ContainerService/managedClusters&#39; is not a valid value for &#39;--type&#39;.
+</span></span></code></pre></div><p>Unfortunately no, we&rsquo;re simply not allowed..</p>
 <p>Fear not, there is a solution! But that solution will have to wait for next time ❤️</p>
 <p><em>Cover photo by <a href="https://pixabay.com/users/vishnu_kv-3192151/">vishnu vijayan </a> on <a href="https://pixabay.com/photos/cyber-security-online-computer-2296269/">pixabay</a></em></p>
 
@@ -597,7 +597,7 @@ az network private-endpoint create --resource-group hub --name pe-$aksName <span
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/bb5760ab6c046d9e41787895729c561883f186f6">bb5760ab</a>]
         </p>
       </div>

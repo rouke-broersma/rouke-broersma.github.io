@@ -63,7 +63,7 @@
   "headline": "How to Use Dedicated Disks in Wsl",
   "description" : "When you access Windows files from WSL there is a large price to pay. But if you have important or a lot of data you use in WSL it can be a problem to only use the WSL root filesystem you get by default. It lives only in WSL (with an awkward way to access it from Windows) and to me feels like temporary storage you could lose at any time. Wouldn\u0026rsquo;t it be great if you could use an external or extra hard disk in WSL while not having to pay the price? Well, now you can!",
   "inLanguage" : "en",
-  "wordCount":  1142 ,
+  "wordCount":  1124 ,
   "datePublished" : "2021-06-08T20:49:30",
   "dateModified" : "2021-06-08T20:49:30",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
@@ -96,7 +96,7 @@
   <meta name="twitter:site" content="@roukebroersma" />
   <meta name="twitter:creator" content="@roukebroersma" />
   <link href='https://broersma.dev/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.107.0">
   <link rel="alternate" href="https://broersma.dev/index.xml" type="application/rss+xml" title="Rouke Broersma"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://broersma.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -351,65 +351,65 @@ Microsoft is currently working on enabling mounting disks in WSL natively and th
 <p>So you&rsquo;ve signed up for the windows insider program and you&rsquo;re done installing Windows Updates. You have the fancy new Windows features like the new explorer icons (they look pretty good by the way). How do you now mount your disk?</p>
 <p>Well that part is actually pretty simple!</p>
 <p>First identify your Windows &lsquo;physical&rsquo; diskpath by starting Powershell as administrator and using the command <code>wmic diskdrive list brief</code>. The output should look a little something like this.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">PS C:\WINDOWS\system32&gt; wmic diskdrive list brief
-Caption                      DeviceID            Model                        Partitions  Size
-Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE2  Samsung SSD 860 EVO 500GB    0           500105249280
-ST2000DM006-2DM164           \\.\PHYSICALDRIVE4  ST2000DM006-2DM164           1           2000396321280
-ST2000DM001-1CH164           \\.\PHYSICALDRIVE3  ST2000DM001-1CH164           1           2000396321280
-WD Elements 107C USB Device  \\.\PHYSICALDRIVE5  WD Elements 107C USB Device  1           4000710389760
-Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE1  Samsung SSD 860 EVO 500GB    1           500105249280
-Samsung SSD 840 EVO 250GB    \\.\PHYSICALDRIVE0  Samsung SSD 840 EVO 250GB    5           250056737280
-</code></pre></div><p>In my case my disk is <code>WD Elements 107C USB Device</code> at <code>\\.\PHYSICALDRIVE5</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>PS C:\WINDOWS\system32&gt; wmic diskdrive list brief
+</span></span><span style="display:flex;"><span>Caption                      DeviceID            Model                        Partitions  Size
+</span></span><span style="display:flex;"><span>Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE2  Samsung SSD 860 EVO 500GB    0           500105249280
+</span></span><span style="display:flex;"><span>ST2000DM006-2DM164           \\.\PHYSICALDRIVE4  ST2000DM006-2DM164           1           2000396321280
+</span></span><span style="display:flex;"><span>ST2000DM001-1CH164           \\.\PHYSICALDRIVE3  ST2000DM001-1CH164           1           2000396321280
+</span></span><span style="display:flex;"><span>WD Elements 107C USB Device  \\.\PHYSICALDRIVE5  WD Elements 107C USB Device  1           4000710389760
+</span></span><span style="display:flex;"><span>Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE1  Samsung SSD 860 EVO 500GB    1           500105249280
+</span></span><span style="display:flex;"><span>Samsung SSD 840 EVO 250GB    \\.\PHYSICALDRIVE0  Samsung SSD 840 EVO 250GB    5           250056737280
+</span></span></code></pre></div><p>In my case my disk is <code>WD Elements 107C USB Device</code> at <code>\\.\PHYSICALDRIVE5</code>.</p>
 <p>As you can see it has only one partition. I happen to know it is of type Ext4 which the WSL kernel can natively understand so all I have to do to mount my disk is run</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5
-</code></pre></div><p>And now the disk will be mounted in my WSL at /mnt/wsl/PHYSICALDRIVE5</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-pwsh" data-lang="pwsh"><span style="display:flex;"><span>wsl --mount \\.\PHYSICALDRIVE5
+</span></span></code></pre></div><p>And now the disk will be mounted in my WSL at /mnt/wsl/PHYSICALDRIVE5</p>
 <h3 id="going-deeper">Going deeper</h3>
 <p>If you have more than one partition you will have to specify the partition number you want to mount like so</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --partition 3
-</code></pre></div><p>This does mean you need to know which partition contains your Linux filesystem.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-pwsh" data-lang="pwsh"><span style="display:flex;"><span>wsl --mount \\.\PHYSICALDRIVE5 --partition 3
+</span></span></code></pre></div><p>This does mean you need to know which partition contains your Linux filesystem.</p>
 <p>To find that out we can mount the disk as &lsquo;bare&rsquo; which basically means that Windows passes through the disk to WSL but does not actually try to mount it to the Linux filesystem.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">wsl --mount \\.\PHYSICALDRIVE5 --bare
-</code></pre></div><p>Then identify the device number for your hard disk with <code>lsblk</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-pwsh" data-lang="pwsh"><span style="display:flex;"><span>wsl --mount \\.\PHYSICALDRIVE5 --bare
+</span></span></code></pre></div><p>Then identify the device number for your hard disk with <code>lsblk</code></p>
 <p>The output will look something like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ lsblk
-NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-loop0    7:0    0 429.6M  1 loop /mnt/wsl/docker-desktop/cli-tools
-loop1    7:1    0 343.4M  1 loop
-sda      8:0    0 347.4M  1 disk
-sdb      8:16   0   256G  0 disk /mnt/wsl/docker-desktop/docker-desktop-proxy
-sdc      8:32   0   256G  0 disk /mnt/wsl/docker-desktop-data/isocache
-sdd      8:48   0   3.7T  0 disk
-└─sdd1   8:49   0   3.7T  0 part 
-sde      8:64   0   256G  0 disk /
-</code></pre></div><p>If you don&rsquo;t immediately recognize your disk from this list based on the size you can use the following command to get all physical drives attached:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>➜  ~ lsblk
+</span></span><span style="display:flex;"><span>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+</span></span><span style="display:flex;"><span>loop0    7:0    0 429.6M  1 loop /mnt/wsl/docker-desktop/cli-tools
+</span></span><span style="display:flex;"><span>loop1    7:1    0 343.4M  1 loop
+</span></span><span style="display:flex;"><span>sda      8:0    0 347.4M  1 disk
+</span></span><span style="display:flex;"><span>sdb      8:16   0   256G  0 disk /mnt/wsl/docker-desktop/docker-desktop-proxy
+</span></span><span style="display:flex;"><span>sdc      8:32   0   256G  0 disk /mnt/wsl/docker-desktop-data/isocache
+</span></span><span style="display:flex;"><span>sdd      8:48   0   3.7T  0 disk
+</span></span><span style="display:flex;"><span>└─sdd1   8:49   0   3.7T  0 part 
+</span></span><span style="display:flex;"><span>sde      8:64   0   256G  0 disk /
+</span></span></code></pre></div><p>If you don&rsquo;t immediately recognize your disk from this list based on the size you can use the following command to get all physical drives attached:</p>
 <p><code>sudo lshw -class disk</code></p>
 <p>The output should look like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ sudo lshw -class disk
-  *-disk:3
-       description: SCSI Disk
-       product: Elements 107C
-       vendor: WD
-       physical id: 0.0.3
-       bus info: scsi@0:0.0.3
-       logical name: /dev/sdd
-       version: 1065
-       serial: WCC4E6TTZ6S6
-       size: 3725GiB (4TB)
-       capabilities: partitioned partitioned:dos
-       configuration: ansiversion=6 logicalsectorsize=4096 sectorsize=4096 signature=db4bf07b
-</code></pre></div><p>Here you can find the disk by it&rsquo;s name and model which you can compare with the <code>wmic diskdrive list brief</code> command from Windows. See the disk is listed as <code>/dev/sdd</code> for me.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>➜  ~ sudo lshw -class disk
+</span></span><span style="display:flex;"><span>  *-disk:3
+</span></span><span style="display:flex;"><span>       description: SCSI Disk
+</span></span><span style="display:flex;"><span>       product: Elements 107C
+</span></span><span style="display:flex;"><span>       vendor: WD
+</span></span><span style="display:flex;"><span>       physical id: 0.0.3
+</span></span><span style="display:flex;"><span>       bus info: scsi@0:0.0.3
+</span></span><span style="display:flex;"><span>       logical name: /dev/sdd
+</span></span><span style="display:flex;"><span>       version: 1065
+</span></span><span style="display:flex;"><span>       serial: WCC4E6TTZ6S6
+</span></span><span style="display:flex;"><span>       size: 3725GiB (4TB)
+</span></span><span style="display:flex;"><span>       capabilities: partitioned partitioned:dos
+</span></span><span style="display:flex;"><span>       configuration: ansiversion=6 logicalsectorsize=4096 sectorsize=4096 signature=db4bf07b
+</span></span></code></pre></div><p>Here you can find the disk by it&rsquo;s name and model which you can compare with the <code>wmic diskdrive list brief</code> command from Windows. See the disk is listed as <code>/dev/sdd</code> for me.</p>
 <p>So now we know which device is our disk but we still don&rsquo;t know anything about the partitions on the disk. For that we need  to go back to <code>lsblk</code>. Find our disk in the list based on the device id (<code>/dev/sdd</code>). Now for every partition listed for this device you have to run <code>blkid &lt;device-id&gt;&lt;partition&gt;</code>. In my case since I have only one partition this is as simple as <code>sudo blkid /dev/sdd1</code></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ sudo blkid /dev/sdd1
-/dev/sdd1: UUID=&#34;6d7e2d05-454d-d701-605c-2d05454dd701&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;03f49424-1d7a-324e-84f6-2f405947782b&#34;
-</code></pre></div><p>If you have multiple partitions you will have to run this command for each of them untill you find the partition you need.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>➜  ~ sudo blkid /dev/sdd1
+</span></span><span style="display:flex;"><span>/dev/sdd1: UUID=&#34;6d7e2d05-454d-d701-605c-2d05454dd701&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;03f49424-1d7a-324e-84f6-2f405947782b&#34;
+</span></span></code></pre></div><p>If you have multiple partitions you will have to run this command for each of them untill you find the partition you need.</p>
 <p>As you can see in the output my partition is of type ext4 which means it is supported.</p>
 <p>At this point you can go back to <a href="#going-deeper" title="mounting the partition in Windows">mounting the partition in Windows</a> and follow the first step.</p>
 <h3 id="bonus-points">Bonus points</h3>
 <p>As we saw earlier WSL mounts the partitions automatically in <code>/mnt/wsl</code> based on the physical device name and the partition id. I wasn&rsquo;t particularly happy with this default as a physical device name tells me nothing about which disk it is. No matter though because as we learned we can mount the disk <code>bare</code> and have the device show up in Linux anyway. Using this information and the information from <code>blkid /dev/sdd1</code> I realized that I could simply mount the partitions in Linux instead!</p>
 <p>First I created a mount point (directory) in <code>/mnt</code> called <code>data</code> with <code>mkdir /mnt/data</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">➜  ~ ls /mnt
-b  c  d  data  e  g  wsl  wslg
-</code></pre></div><p>Then I edited /etc/fstab (the &lsquo;mount configuration&rsquo; file in linux) with nano: <code>sudo nano /etc/fstab</code> and added a line to mount my Linux partition on <code>/mnt/data</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>➜  ~ ls /mnt
+</span></span><span style="display:flex;"><span>b  c  d  data  e  g  wsl  wslg
+</span></span></code></pre></div><p>Then I edited /etc/fstab (the &lsquo;mount configuration&rsquo; file in linux) with nano: <code>sudo nano /etc/fstab</code> and added a line to mount my Linux partition on <code>/mnt/data</code>.</p>
 <p>The entry looks like this:</p>
 <p><code>UUID=6d7e2d05-454d-d701-605c-2d05454dd701 /mnt/data ext4 defaults</code></p>
 <p>Notice that the UUID comes from the output of <code>sudo blkdid /dev/sdd1</code>, the next part of the line is where to mount. Then come the filesystems and the mount options which I left as &lsquo;defaults&rsquo;. Now run <code>sudo mount -a</code> and you&rsquo;ll have access to your drive from WSL!</p>
@@ -628,7 +628,7 @@ b  c  d  data  e  g  wsl  wslg
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/caf6cb1d33d52a2b5ebdeafe6c8d6567f25dedf4">caf6cb1d</a>]
         </p>
       </div>

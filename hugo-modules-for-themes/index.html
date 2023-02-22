@@ -61,7 +61,7 @@
     "name" : "Rouke Broersma"
   },
   "headline": "Hugo Modules for Themes",
-  "description" : "The hugo tutorial tells you to use git submodules for themes. However hugo has a better system for dependencies called modules. I\u0027 ll show you how to switch from git submodules to hugo modules!",
+  "description" : "The hugo tutorial tells you to use git submodules for themes. However hugo has a better system for dependencies called modules. I\u0026rsquo; ll show you how to switch from git submodules to hugo modules!",
   "inLanguage" : "en",
   "wordCount":  213 ,
   "datePublished" : "2021-05-21T19:56:08",
@@ -96,7 +96,7 @@
   <meta name="twitter:site" content="@roukebroersma" />
   <meta name="twitter:creator" content="@roukebroersma" />
   <link href='https://broersma.dev/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.82.0" />
+  <meta name="generator" content="Hugo 0.107.0">
   <link rel="alternate" href="https://broersma.dev/index.xml" type="application/rss+xml" title="Rouke Broersma"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://broersma.dev/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -339,10 +339,10 @@ if (!doNotTrack) {
       <article role="main" class="blog-post">
         <p>The <a href="https://gohugo.io/getting-started/quick-start/">tutorial</a> for Hugo tells you how to install themes in step 3.
 This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git init
-git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-echo theme = <span style="color:#a31515">\&#34;</span>ananke<span style="color:#a31515">\&#34;</span> &gt;&gt; config.toml
-</code></pre></div><p>This has some problems.
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+</span></span><span style="display:flex;"><span>echo theme = <span style="color:#a31515">\&#34;</span>ananke<span style="color:#a31515">\&#34;</span> &gt;&gt; config.toml
+</span></span></code></pre></div><p>This has some problems.
 Mainly that I don&rsquo;t want to learn how to work with git submodules 😄 but also.. I don&rsquo;t understand git submodules 🙄.
 But I don&rsquo;t have to! Apparently Hugo has created the concept of <a href="https://gohugo.io/hugo-modules/use-modules/">Hugo modules</a>.
 They are basically <a href="https://blog.golang.org/using-go-modules">Go modules</a>.</p>
@@ -350,9 +350,9 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
 <p>Firstly you have to make your site a Go module, hugo can help you with this.</p>
 <p><code>hugo mod init &lt;any-name-you-want&gt;</code></p>
 <p>Then you add your themes/modules to a hugo module config.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[[imports]]
-    path = &#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;
-</code></pre></div><p><em>Notice that the path does not include <code>https://</code> or <code>.git</code>. Don&rsquo;t add them, it won&rsquo;t work.</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[[imports]]
+</span></span><span style="display:flex;"><span>    path = &#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;
+</span></span></code></pre></div><p><em>Notice that the path does not include <code>https://</code> or <code>.git</code>. Don&rsquo;t add them, it won&rsquo;t work.</em></p>
 <p>Lastly delete the git submodules in <code>/themes</code>, git submodule config (<code>.gitsubmodules</code> file) and the <code>theme = &quot;ananke&quot;</code> from <code>config.toml</code>. Done!</p>
 <p>As a little extra here are some nice hugo modules I&rsquo;ve recently started using, which you can try to add as a hu(go) module!</p>
 <ol>
@@ -570,7 +570,7 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.82.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
           &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/fafcd8daef6d96c522cfdd82b61aabd6bd7f5d65">fafcd8da</a>]
         </p>
       </div>
