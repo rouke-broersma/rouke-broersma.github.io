@@ -3,12 +3,12 @@ title: "Approve Private Endpoint Connections"
 date: 2023-02-21T18:32:41Z
 subtitle: "With Bicep"
 image: "/content/approve-private-endpoint-connections-with-bicep/taylor-vick-M5tzZtFCOfs-unsplash.jpg"
-summary: "Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. But usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config."
+summary: "Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config."
 tags: ["Azure", "AKS", "Kubernetes", "Private Link", "Private Endpoint"]
 series: ["Private Link"]
 ---
 
-Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. But usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.
+Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.
 
 ### Approve a private endpoint with Bicep
 
@@ -75,7 +75,7 @@ resource privateEndpointConnection 'Microsoft.Sql/servers/privateEndpointConnect
 }
 ```
 
-As we've seen in the previous article it is sometimes  impossible to approve the private endpoint connection through the azure portal or the azure cli.
+As we've seen in [Azure AKS Private Clusters]({{< ref "azure-aks-private-clusters" >}} "the previous post") it is sometimes impossible to approve the private endpoint connection through the azure portal or the azure cli.
 Luckily the ARM (Bicep) api is very consistent which is going to help us out here.
 
 The private endpoint connection approval for an AKS API server would look like this:
