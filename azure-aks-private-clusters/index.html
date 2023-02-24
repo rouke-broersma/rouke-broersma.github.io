@@ -63,7 +63,7 @@
   "headline": "Azure Aks Private Clusters",
   "description" : "When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you\u0026rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access.",
   "inLanguage" : "en",
-  "wordCount":  1025 ,
+  "wordCount":  1028 ,
   "datePublished" : "2023-02-21T00:00:00",
   "dateModified" : "2023-02-20T20:39:47",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
@@ -337,12 +337,16 @@ if (!doNotTrack) {
 <p>However, there are downsides to locking down access to your AKS API server. Locking down access means you need to be on the private network used by AKS to be able to manage the workloads you want to run on the cluster.
 There are many ways to gain network access, ranging from jump host virtual machines in the cluster to VPNs or even express routes. This can become a problem when you manage more than a single cluster.
 In addition to having to deal with overlapping network range concerns, the risk of having to connect multiple unrelated networks together through network peering, VPN gateways, or express routes adds another burden. Instead, simply to reach the cluster, you must manage jumphosts in each network where AKS is deployed. This is also not ideal.</p>
-<h3 id="azure-private-link">Azure private link</h3>
-<p>If you are familiar with Azure private networks you probably know about Azure private link, which AKS uses to enable the private cluster feature.
+<h3 id="azure-private-link">
+    <a class="heading-anchor" href="#azure-private-link">#</a>
+    Azure private link
+</h3><p>If you are familiar with Azure private networks you probably know about Azure private link, which AKS uses to enable the private cluster feature.
 For those that are not familiar, private link enables you to connect your azure resources to your Azure private virtual networks so you can disable public networks access. With private link you can connect one Azure resource to multiple (limits apply but are quite high) endpoints in private virtual networks across subscriptions, Azure ad tenants and Azure regions. This makes network setups for Azure resources very flexible without traditional concerns like overlapping network space.</p>
 <p>Like me you might now think great! We create the private link endpoints for multiple private AKS clusters in the same virtual network so you can manage our clusters from a single location! Now how would we go and do that?</p>
-<h3 id="lets-create-a-private-cluster">Let&rsquo;s create a private cluster</h3>
-<p>I will be using the az-cli for the most part. Let&rsquo;s create a small example cluster.</p>
+<h3 id="lets-create-a-private-cluster">
+    <a class="heading-anchor" href="#lets-create-a-private-cluster">#</a>
+    Let&rsquo;s create a private cluster
+</h3><p>I will be using the az-cli for the most part. Let&rsquo;s create a small example cluster.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login --tenant broersma.dev
 </span></span><span style="display:flex;"><span>az account set -s VS Enterprise
 </span></span><span style="display:flex;"><span>
@@ -365,8 +369,10 @@ If you query Azure for the public fqdn</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>az aks show --name $aksName \
 </span></span><span style="display:flex;"><span>     --resource-group $rgName --query &#34;fqdn&#34;
 </span></span></code></pre></div><p>and pass the result to nslookup and you&rsquo; ll get the private IP of the api server, which is also configured in the private dns zone. Neat right? Fortunately you can disable this at cluster creation.</p>
-<h3 id="connecting-to-our-private-cluster">Connecting to our private cluster</h3>
-<p>As said before, you can now connect to the cluster by deploying a jump host connected to the AKS network. The jump host will automatically pick up the DNS record for the private IP and use the private endpoint to connect to the API server. But I already have a VPN setup in another tenant I&rsquo;m using. It would be much more convenient not to mention cheaper to use my existing setup, so let&rsquo;s create a private endpoint to my AKS cluster.</p>
+<h3 id="connecting-to-our-private-cluster">
+    <a class="heading-anchor" href="#connecting-to-our-private-cluster">#</a>
+    Connecting to our private cluster
+</h3><p>As said before, you can now connect to the cluster by deploying a jump host connected to the AKS network. The jump host will automatically pick up the DNS record for the private IP and use the private endpoint to connect to the API server. But I already have a VPN setup in another tenant I&rsquo;m using. It would be much more convenient not to mention cheaper to use my existing setup, so let&rsquo;s create a private endpoint to my AKS cluster.</p>
 <p>We will need to target the subresource (group-id) &ldquo;management&rdquo; and we will have to choose manual approval since we are creating a cross-tenant private endpoint.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#008000"># we&#39;re going to need the ID later</span>
 </span></span><span style="display:flex;"><span>resourceId=<span style="color:#00f">$(</span>az aks show --name $aksName --resource-group private-aks --query <span style="color:#a31515">&#34;id&#34;</span><span style="color:#00f">)</span>
@@ -620,7 +626,7 @@ If you query Azure for the public fqdn</p>
   </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script src="https://broersma.dev/js/main.js"></script>

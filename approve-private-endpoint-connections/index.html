@@ -63,7 +63,7 @@
   "headline": "Approve Private Endpoint Connections",
   "description" : "Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.",
   "inLanguage" : "en",
-  "wordCount":  433 ,
+  "wordCount":  434 ,
   "datePublished" : "2023-02-23T00:00:00",
   "dateModified" : "2023-02-23T00:00:00",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
@@ -340,8 +340,10 @@ if (!doNotTrack) {
         <p>Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.</p>
 <p>I&rsquo;ve recently read <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks#private-endpoints">an article</a> by Microsoft that states that you cannot approve a private endpoint connection using Bicep/ARM.</p>
 <p>Well.. About that..</p>
-<h3 id="approve-a-private-endpoint-with-bicep">Approve a private endpoint with Bicep</h3>
-<p>It is actually very simple to approve a private endpoint using Bicep because the private endpoint connection - which is the link between the private endpoint and the target resource - is a child resource of the target resource.</p>
+<h3 id="approve-a-private-endpoint-with-bicep">
+    <a class="heading-anchor" href="#approve-a-private-endpoint-with-bicep">#</a>
+    Approve a private endpoint with Bicep
+</h3><p>It is actually very simple to approve a private endpoint using Bicep because the private endpoint connection - which is the link between the private endpoint and the target resource - is a child resource of the target resource.</p>
 <p>This means that if we have an Azure SQL Server that looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>resource dbserver &#39;Microsoft.Sql/servers@2022-05-01-preview&#39; = {
 </span></span><span style="display:flex;"><span>  name: &#39;broersma&#39;
@@ -630,7 +632,7 @@ As you can see in the examples above the name contains a guid (<code>c578f695-58
   </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <script src="https://broersma.dev/js/main.js"></script>
