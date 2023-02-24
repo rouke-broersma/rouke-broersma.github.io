@@ -22,8 +22,11 @@ else
 fi
 
 docker run --rm \
+  --user $UID:$UID \
+  --volume="$(pwd)/cache:/cache" \
+  --volume="$(pwd)/dist:/dist" \
   --volume="$(pwd):/src" \
-  --workdir="/src/src" \
+  --env-file hugo-environment-variables.env \
   klakegg/hugo:ext-alpine \
   new "$title"
 sudo chown -R "$USER:$USER" src

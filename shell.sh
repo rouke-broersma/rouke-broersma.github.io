@@ -2,7 +2,7 @@
 source common.sh 
 
 docker run --rm -it \
-  --user 1000:1000 \
+  --user $UID:$UID \
   --volume="$(pwd)/cache:/cache" \
   --volume="$(pwd)/dist:/dist" \
   --volume="$(pwd):/src" \

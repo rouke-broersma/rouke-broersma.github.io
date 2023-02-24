@@ -1,8 +1,10 @@
 #!/bin/bash
 source common.sh 
 
+sudo chown -R $UID:$UID .
+
 docker run --rm \
-  --user 1000:1000 \
+  --user $UID:$UID \
   --volume="$(pwd)/cache:/cache" \
   --volume="$(pwd)/dist:/dist" \
   --volume="$(pwd):/src" \
