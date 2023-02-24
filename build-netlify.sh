@@ -2,4 +2,4 @@
 
 source common.sh
 
-hugo --source "/src" --noTime
+hugo --environment development --source "/src" --noTimes
