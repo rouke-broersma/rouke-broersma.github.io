@@ -10,6 +10,10 @@ series: ["Private Link"]
 
 Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.
 
+I've recently read [an article](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks#private-endpoints) by Microsoft that states that you cannot approve a private endpoint connection using Bicep/ARM.
+
+Well.. About that.. 
+
 ### Approve a private endpoint with Bicep
 
 It is actually very simple to approve a private endpoint using Bicep because the private endpoint connection - which is the link between the private endpoint and the target resource - is a child resource of the target resource. 
