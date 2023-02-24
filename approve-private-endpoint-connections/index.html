@@ -63,7 +63,7 @@
   "headline": "Approve Private Endpoint Connections",
   "description" : "Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.",
   "inLanguage" : "en",
-  "wordCount":  411 ,
+  "wordCount":  433 ,
   "datePublished" : "2023-02-23T00:00:00",
   "dateModified" : "2023-02-23T00:00:00",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
@@ -313,6 +313,8 @@ if (!doNotTrack) {
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on 23 February 2023
   
+    &nbsp;(Last modified on 24 February 2023)
+  
   
   
   
@@ -336,6 +338,8 @@ if (!doNotTrack) {
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
         <p>Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.</p>
+<p>I&rsquo;ve recently read <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/scenarios-virtual-networks#private-endpoints">an article</a> by Microsoft that states that you cannot approve a private endpoint connection using Bicep/ARM.</p>
+<p>Well.. About that..</p>
 <h3 id="approve-a-private-endpoint-with-bicep">Approve a private endpoint with Bicep</h3>
 <p>It is actually very simple to approve a private endpoint using Bicep because the private endpoint connection - which is the link between the private endpoint and the target resource - is a child resource of the target resource.</p>
 <p>This means that if we have an Azure SQL Server that looks like this:</p>
@@ -619,7 +623,7 @@ As you can see in the examples above the name contains a guid (<code>c578f695-58
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/202d1b0d157b79684da44f80520f7013ebbd4f92">202d1b0d</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/2e8094ed860e87def33ad8b5097c32169df10ba6">2e8094ed</a>]
         </p>
       </div>
     </div>
