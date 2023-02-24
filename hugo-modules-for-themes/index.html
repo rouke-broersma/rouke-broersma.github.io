@@ -313,7 +313,7 @@ if (!doNotTrack) {
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on 21 May 2021
   
-    &nbsp;(Last modified on 27 February 2022)
+    &nbsp;(Last modified on 24 February 2023)
   
   
   
@@ -339,9 +339,9 @@ if (!doNotTrack) {
       <article role="main" class="blog-post">
         <p>The <a href="https://gohugo.io/getting-started/quick-start/">tutorial</a> for Hugo tells you how to install themes in step 3.
 This is great because you probably want to pick one of the hundreds of beautiful 3rd party themes to get hugo to do what you want it to do.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
 </span></span><span style="display:flex;"><span>git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-</span></span><span style="display:flex;"><span>echo theme = <span style="color:#a31515">\&#34;</span>ananke<span style="color:#a31515">\&#34;</span> &gt;&gt; config.toml
+</span></span><span style="display:flex;"><span>echo theme <span style="color:#f92672">=</span> <span style="color:#ae81ff">\&#34;</span>ananke<span style="color:#ae81ff">\&#34;</span> &gt;&gt; config.toml
 </span></span></code></pre></div><p>This has some problems.
 Mainly that I don&rsquo;t want to learn how to work with git submodules 😄 but also.. I don&rsquo;t understand git submodules 🙄.
 But I don&rsquo;t have to! Apparently Hugo has created the concept of <a href="https://gohugo.io/hugo-modules/use-modules/">Hugo modules</a>.
@@ -352,8 +352,8 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
 </h3><p>Firstly you have to make your site a Go module, hugo can help you with this.</p>
 <p><code>hugo mod init &lt;any-name-you-want&gt;</code></p>
 <p>Then you add your themes/modules to a hugo module config.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>[[imports]]
-</span></span><span style="display:flex;"><span>    path = &#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[<span style="color:#a6e22e">imports</span>]]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">path</span> = <span style="color:#e6db74">&#34;github.com/theNewDynamic/gohugo-theme-ananke&#34;</span>
 </span></span></code></pre></div><p><em>Notice that the path does not include <code>https://</code> or <code>.git</code>. Don&rsquo;t add them, it won&rsquo;t work.</em></p>
 <p>Lastly delete the git submodules in <code>/themes</code>, git submodule config (<code>.gitsubmodules</code> file) and the <code>theme = &quot;ananke&quot;</code> from <code>config.toml</code>. Done!</p>
 <p>As a little extra here are some nice hugo modules I&rsquo;ve recently started using, which you can try to add as a hu(go) module!</p>
@@ -573,7 +573,7 @@ They are basically <a href="https://blog.golang.org/using-go-modules">Go modules
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/fafcd8daef6d96c522cfdd82b61aabd6bd7f5d65">fafcd8da</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/b9ae91efecb1663fcfb2ad4caccd9a1d94617051">b9ae91ef</a>]
         </p>
       </div>
     </div>
