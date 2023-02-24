@@ -25,7 +25,7 @@ jobs:
         git fetch
         git checkout gh-pages
         sudo chown -R $USER:$USER .
-        ls --hide=dist | xargs rm -r
+        ls --hide=dist | xargs sudo rm -r
         shopt -s dotglob
         mv dist/* .
         rmdir dist
