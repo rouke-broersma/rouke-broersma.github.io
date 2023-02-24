@@ -4,7 +4,7 @@ title = "Rouke Broersma"
 DefaultContentLanguage = "en"
 
 # Build options
-publishdir = "/dist"
+publishdir = "dist"
 canonifyURLs = true
 enableGitInfo = true
 enableEmoji = true
