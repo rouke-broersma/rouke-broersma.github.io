@@ -24,7 +24,7 @@ jobs:
         GIT_COMMIT=$(git rev-parse HEAD)
         git fetch
         git checkout gh-pages
-        sudo chown -R $UID:$UID .
+        sudo chown -R $USER:$USER .
         ls --hide=dist | xargs rm -r
         shopt -s dotglob
         mv dist/* .
