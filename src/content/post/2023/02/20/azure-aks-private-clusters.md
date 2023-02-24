@@ -53,7 +53,7 @@ If you look in your subscription you will see a new resource group prefixed with
 
 By default AKS also creates a record pointing to our private IP in the Azure public DNS.
 If you query Azure for the public fqdn  
-```
+```bash
 az aks show --name $aksName \
      --resource-group $rgName --query "fqdn"
 ```  
@@ -90,7 +90,7 @@ However if we look at the docs we immediately have a new problem, [az network pr
 
 Let's try anyway. 
 
-```
+```bash
 az network private-endpoint-connection approve \
     --name $aksName --resource-name $aksName --resource-group $rgName \
     --type "Microsoft.ContainerService/managedClusters"
@@ -101,6 +101,6 @@ az network private-endpoint-connection approve \
 
 Unfortunately no, we're simply not allowed..
 
-Fear not, there is a solution! But that solution will have to wait for next time :heart:
+Fear not, there is a solution! The solution can be found in [the next post]({{< ref "approve-private-endpoint-connections-with-bicep" >}} "Approve private endpoint connections with Bicep")!
 
 _Cover photo by [vishnu vijayan ](https://pixabay.com/users/vishnu_kv-3192151/) on [pixabay](https://pixabay.com/photos/cyber-security-online-computer-2296269/)_

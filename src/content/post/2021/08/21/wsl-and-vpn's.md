@@ -28,7 +28,7 @@ From this list pick your VPN and look at the MTU column to find the MTU value. I
 
 Now in your WSL open your `~/.profile` or `~/.zprofile` (or whichever shell dotfile you prefer in your system) and add the following line:
 
-```zsh
+```bash
 sudo ip link set dev eth0 mtu 1400
 ```
 

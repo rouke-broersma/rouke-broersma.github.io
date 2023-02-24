@@ -34,7 +34,7 @@ Well that part is actually pretty simple!
 
 First identify your Windows 'physical' diskpath by starting Powershell as administrator and using the command `wmic diskdrive list brief`. The output should look a little something like this.
 
-```
+```pwsh
 PS C:\WINDOWS\system32> wmic diskdrive list brief
 Caption                      DeviceID            Model                        Partitions  Size
 Samsung SSD 860 EVO 500GB    \\.\PHYSICALDRIVE2  Samsung SSD 860 EVO 500GB    0           500105249280
@@ -75,7 +75,7 @@ Then identify the device number for your hard disk with `lsblk`
 
 The output will look something like this:
 
-```
+```bash
 ➜  ~ lsblk
 NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0    7:0    0 429.6M  1 loop /mnt/wsl/docker-desktop/cli-tools
@@ -94,7 +94,7 @@ If you don't immediately recognize your disk from this list based on the size yo
 
 The output should look like this:
 
-```
+```bash
 ➜  ~ sudo lshw -class disk
   *-disk:3
        description: SCSI Disk
@@ -114,7 +114,7 @@ Here you can find the disk by it's name and model which you can compare with the
 
 So now we know which device is our disk but we still don't know anything about the partitions on the disk. For that we need  to go back to `lsblk`. Find our disk in the list based on the device id (`/dev/sdd`). Now for every partition listed for this device you have to run `blkid <device-id><partition>`. In my case since I have only one partition this is as simple as `sudo blkid /dev/sdd1`
 
-```
+```bash
 ➜  ~ sudo blkid /dev/sdd1
 /dev/sdd1: UUID="6d7e2d05-454d-d701-605c-2d05454dd701" TYPE="ext4" PARTUUID="03f49424-1d7a-324e-84f6-2f405947782b"
 ```
@@ -131,7 +131,7 @@ As we saw earlier WSL mounts the partitions automatically in `/mnt/wsl` based on
 
 First I created a mount point (directory) in `/mnt` called `data` with `mkdir /mnt/data`.
 
-```
+```bash
 ➜  ~ ls /mnt
 b  c  d  data  e  g  wsl  wslg
 ```

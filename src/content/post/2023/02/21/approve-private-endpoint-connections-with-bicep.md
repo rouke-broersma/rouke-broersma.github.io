@@ -20,7 +20,7 @@ It is actually very simple to approve a private endpoint using Bicep because the
 
 This means that if we have an Azure SQL Server that looks like this:
 
-```
+```bicep
 resource dbserver 'Microsoft.Sql/servers@2022-05-01-preview' = {
   name: 'broersma'
   location: 'westeurope'
@@ -67,7 +67,7 @@ We can approve the endpoint like this
 
 Or as Bicep
 
-```
+```bicep
 resource privateEndpointConnection 'Microsoft.Sql/servers/privateEndpointConnections@2022-05-01-preview' = {
     name: 'broersma/pe-azuresql-broersma-5c1e262d-42af-40f8-8b1b-e766be1ea324'
     properties: {
@@ -84,7 +84,7 @@ Luckily the ARM (Bicep) api is very consistent which is going to help us out her
 
 The private endpoint connection approval for an AKS API server would look like this:
 
-```
+```bicep
 resource privateEndpointConnection 'Microsoft.ContainerService/managedClusters/privateEndpointConnections@2022-05-01-preview' = {
     name: 'private-aks-broersma/ppe-private-aks-broersma-c578f695-5826-44e0-b6a5-fb322b2e1915'
     properties: {
@@ -101,7 +101,7 @@ As you can see in the examples above the name contains a guid (`c578f695-5826-44
 
 This can be done by exporting the template in the azure portal, using azure cli or by using the arm api like so:
 
-```
+```bash
 subscriptionId="09b13d6b-29c5-425f-b451-935c2c89a30b"
 resourceGroup="private-aks"
 apiGroup="Microsoft.ContainerService/managedClusters"

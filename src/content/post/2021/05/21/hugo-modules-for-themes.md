@@ -31,7 +31,7 @@ Firstly you have to make your site a Go module, hugo can help you with this.
 
 Then you add your themes/modules to a hugo module config.
 
-```module.config
+```toml
 [[imports]]
     path = "github.com/theNewDynamic/gohugo-theme-ananke"
 ```
