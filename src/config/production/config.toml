@@ -1,3 +1,6 @@
+# Basics 
+baseUrl = "https://broersma.dev"
+
 # Disable posts
 buildDrafts = false
 buildFuture = false
