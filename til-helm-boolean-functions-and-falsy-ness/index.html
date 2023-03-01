@@ -334,42 +334,42 @@ if (!doNotTrack) {
         <p>Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You&rsquo;ve probably encountered this before yourself.
 But did you realize that helm template functions also inherit some of the Json issues? I sure didn&rsquo;t until it bit me!</p>
 <p>Now a very common basic helm construct for dealing with default values is the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>apiVersion: v1
-</span></span><span style="display:flex;"><span>kind: ConfigMap
-</span></span><span style="display:flex;"><span>metadata:
-</span></span><span style="display:flex;"><span>  name: my-cm
-</span></span><span style="display:flex;"><span>data:
-</span></span><span style="display:flex;"><span>  mybool: {{ .Values.myapp.mybool | default true }}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: {{ <span style="color:#ae81ff">.Values.myapp.mybool | default true }}</span>
 </span></span></code></pre></div><p>Let&rsquo;s use this values file to set the bool to false for a specific deployment:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">myapp</span>:
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">false</span>
 </span></span></code></pre></div><p>What I expected is a generated template looking like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>apiVersion: v1
-</span></span><span style="display:flex;"><span>kind: ConfigMap
-</span></span><span style="display:flex;"><span>metadata:
-</span></span><span style="display:flex;"><span>  name: my-cm
-</span></span><span style="display:flex;"><span>data:
-</span></span><span style="display:flex;"><span>  mybool: false
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">false</span>
 </span></span></code></pre></div><p>But what I got was:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>apiVersion: v1
-</span></span><span style="display:flex;"><span>kind: ConfigMap
-</span></span><span style="display:flex;"><span>metadata:
-</span></span><span style="display:flex;"><span>  name: my-cm
-</span></span><span style="display:flex;"><span>data:
-</span></span><span style="display:flex;"><span>  mybool: true
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">true</span>
 </span></span></code></pre></div><p>Heh? Well, the helm template function is falsy. It treats false as an input to the <code>default</code> function the same as <code>undefined</code>, so it returns <code>true</code>, the default value.
 Apparently I wasn&rsquo;t the only one to get tricked into using this construct, there is a fairly long Github issue with potential workarounds on <a href="https://github.com/helm/helm/issues/3308">the helm repo</a>.</p>
 <p>In the end I chose this construct out of the many proposed solutions:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>apiVersion: v1
-</span></span><span style="display:flex;"><span>kind: ConfigMap
-</span></span><span style="display:flex;"><span>metadata:
-</span></span><span style="display:flex;"><span>  name: my-cm
-</span></span><span style="display:flex;"><span>data:
-</span></span><span style="display:flex;"><span>  {{- if list nil true | has .Values.myapp.mybool }}
-</span></span><span style="display:flex;"><span>  mybool: true
-</span></span><span style="display:flex;"><span>  {{- else }}
-</span></span><span style="display:flex;"><span>  mybool: {{ .Values.myapp.mybool }}
-</span></span><span style="display:flex;"><span>  {{- end }}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
+</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">if list nil true | has .Values.myapp.mybool }}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">else }}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: {{ <span style="color:#ae81ff">.Values.myapp.mybool }}</span>
+</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">end }}</span>
 </span></span></code></pre></div><p>Which solution do you prefer? Let me know!</p>
 
 
@@ -555,7 +555,7 @@ Apparently I wasn&rsquo;t the only one to get tricked into using this construct,
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/a80246485da82c78588d1e1a0156131ea5a1f4ad">a8024648</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/7c95b0364cd83dfaf74fa63916786762da9dfc36">7c95b036</a>]
         </p>
       </div>
     </div>
