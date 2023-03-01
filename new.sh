@@ -21,6 +21,8 @@ else
   title="post/$year/$month/$day/$title.md"
 fi
 
+source common.sh 
+
 docker run --rm \
   --user $UID:$UID \
   --volume="$(pwd)/cache:/cache" \
@@ -28,5 +30,6 @@ docker run --rm \
   --volume="$(pwd):/src" \
   --env-file hugo-environment-variables.env \
   klakegg/hugo:ext-alpine \
-  new "$title"
+  new "$title" \
+  --source "/src/src"
 sudo chown -R "$USER:$USER" src
