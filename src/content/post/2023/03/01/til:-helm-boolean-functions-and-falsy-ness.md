@@ -1,8 +1,7 @@
 ---
 title: "Til: Helm Boolean Functions and Falsy-Ness"
 date: 2023-03-01T09:46:05Z
-subtitle: ""
-image: ""
+summary: "Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You’ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn’t until it bit me!"
 tags: ["helm", "yaml"]
 series: ["TIL"]
 ---
