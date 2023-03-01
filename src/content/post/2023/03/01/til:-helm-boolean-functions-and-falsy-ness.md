@@ -9,7 +9,7 @@ Did you know Yaml is a superset of Json? Probably. Did you realize this means Ya
 But did you realize that helm template functions also inherit some of the Json issues? I sure didn't until it bit me!
 
 Now a very common basic helm construct for dealing with default values is the following:
-```helm
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -26,7 +26,7 @@ myapp:
 
 What I expected is a generated template looking like this:
 
-```helm
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -37,7 +37,7 @@ data:
 
 But what I got was:
 
-```helm
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -51,7 +51,7 @@ Apparently I wasn't the only one to get tricked into using this construct, there
 
 In the end I chose this construct out of the many proposed solutions:
 
-```helm
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
