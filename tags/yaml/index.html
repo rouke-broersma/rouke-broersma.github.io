@@ -10,7 +10,7 @@
  
 
 
-      <title>Posts - Rouke&#39;s Blog</title>
+      <title>yaml - Rouke&#39;s Blog</title>
 
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
@@ -33,13 +33,13 @@
 }
 </script>
 
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="yaml" />
 <meta property="og:image" content="https://broersma.dev/images/icon-circle.png" />
-<meta property="og:url" content="https://broersma.dev/post/" />
+<meta property="og:url" content="https://broersma.dev/tags/yaml/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke Broersma" />
 
-  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:title" content="yaml" />
   <meta name="twitter:image" content="https://broersma.dev/images/icon-circle.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@roukebroersma" />
@@ -69,17 +69,17 @@
 <meta name="twitter:site" content="@roukebroersma" key="twhandle" />
 
 
-<title>Posts &middot; Rouke Broersma</title>
+<title>yaml &middot; Rouke Broersma</title>
 <meta name="description" content="" />
 
 <meta name="keywords" content="short, blog, broersma, tech, azure, dotnet, mutation-testing, stryker" />
 
-<meta property="og:url" content="https://broersma.dev/post/" />
-<meta property="og:title" content="Posts &middot; Rouke Broersma" />
+<meta property="og:url" content="https://broersma.dev/tags/yaml/" />
+<meta property="og:title" content="yaml &middot; Rouke Broersma" />
 
 <meta name="og:description" content="I write short(ish) blogposts about things that interest me." />
 
-<meta name="twitter:url" content="https://broersma.dev/post/" />
+<meta name="twitter:url" content="https://broersma.dev/tags/yaml/" />
 
 <meta property="og:image" content="https://broersma.devimages/icon-circle.png" key="ogimage" />
 
@@ -246,25 +246,14 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
+            <div class="tags-heading">
               
-                <h1>Posts</h1>
-              
-              
+                <h1>yaml</h1>
               
               
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 1 March 2023
-  
-  
-  
-  
-  
-</span>
-
-
+                <hr class="small">
+              
+              
               
             </div>
           </div>
@@ -317,321 +306,6 @@ apiVersion: v1 kind: ConfigMap metadata: name: my-cm data: mybool: {{ .
         <a href="https://broersma.dev/tags/helm/">helm</a>&nbsp;
         
         <a href="https://broersma.dev/tags/yaml/">yaml</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/approve-private-endpoint-connections/">Approve Private Endpoint Connections</a></h2>
-    
-    <h3 class="post-subtitle"><a href="https://broersma.dev/approve-private-endpoint-connections/">With Bicep</a></h3>
-    
-    
-    <a href="https://broersma.dev/approve-private-endpoint-connections/"><img src="https://broersma.dev/content/approve-private-endpoint-connections-with-bicep/taylor-vick-M5tzZtFCOfs-unsplash.jpg" alt="Approve Private Endpoint Connections" class="img-title" /></a>
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 23 February 2023
-  
-    &nbsp;(Last modified on 24 February 2023)
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Managing private endpoint connections - especially across Azure AD tenants - can be a chore. In many cases you will have to do this manually and often you will need elevated permissions. Though usually your deployment pipeline already has sufficient permissions on the resource to approve the endpoint connection, so it would be much more convenient if we could make the approval a part of our desired state config.
-        <a href="https://broersma.dev/approve-private-endpoint-connections/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/azure/">Azure</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/aks/">AKS</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/kubernetes/">Kubernetes</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/private-link/">Private Link</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/private-endpoint/">Private Endpoint</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/azure-aks-private-clusters/">Azure Aks Private Clusters</a></h2>
-    
-    
-    <a href="https://broersma.dev/azure-aks-private-clusters/"><img src="https://broersma.dev/content/azure-aks-private-clusters/header_image_security.jpg" alt="Azure Aks Private Clusters" class="img-title" /></a>
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 20 February 2023
-  
-    &nbsp;(Last modified on 24 February 2023)
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        When using Kubernetes it is considered good practice to limit API server access as much as possible. However the default configuration on cloud providers  exposes the API server on the public internet. This is fine when you&rsquo;re giving it a try but once you start using Kubernetes more seriously you will probably want to start locking down access.
-        <a href="https://broersma.dev/azure-aks-private-clusters/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/azure/">Azure</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/aks/">AKS</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/kubernetes/">Kubernetes</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/private-link/">Private Link</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/private-endpoint/">Private Endpoint</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/wsl-and-vpns/">Wsl and Vpns</a></h2>
-    
-    <h3 class="post-subtitle"><a href="https://broersma.dev/wsl-and-vpns/">Why you get TLS handshake errors in WSL</a></h3>
-    
-    
-    <a href="https://broersma.dev/wsl-and-vpns/"><img src="https://broersma.dev/content/wsl-and-vpns/unsecure-connection-warn.png" alt="Wsl and Vpns" class="img-title" /></a>
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 21 August 2021
-  
-    &nbsp;(Last modified on 24 February 2023)
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        WSL does not play nice with VPNs and you likely will not realize this is the problem at first. Luckily the problem is usually easy to fix. Changing the MTU value of your WSL network adapter is a good start if you are having issues!
-        <a href="https://broersma.dev/wsl-and-vpns/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/">How to Use Dedicated Disks in Wsl</a></h2>
-    
-    
-    <a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/"><img src="https://broersma.dev/content/how-to-use-dedicated-disks-in-wsl/explorer.png" alt="How to Use Dedicated Disks in Wsl" class="img-title" /></a>
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 8 June 2021
-  
-    &nbsp;(Last modified on 24 February 2023)
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        When you access Windows files from WSL there is a large price to pay. But if you have important or a lot of data you use in WSL it can be a problem to only use the WSL root filesystem you get by default. It lives only in WSL (with an awkward way to access it from Windows) and to me feels like temporary storage you could lose at any time. Wouldn&rsquo;t it be great if you could use an external or extra hard disk in WSL while not having to pay the price? Well, now you can!
-        <a href="https://broersma.dev/how-to-use-dedicated-disks-in-wsl/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/">How to Start Wsl in Linux User Home</a></h2>
-    
-    <h3 class="post-subtitle"><a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/">When using Windows Terminal</a></h3>
-    
-    
-    <a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/"><img src="https://broersma.dev/content/how-to-start-wsl-in-linux-homedir/gia-oris-start-here-unsplash.jpg" alt="How to Start Wsl in Linux User Home" class="img-title" /></a>
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 24 May 2021
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        While using the Windows Terminal with WSL and Ubuntu I was bothered by the fact that I would always start in my Windows user home. Luckily there are ways to fix that.
-        <a href="https://broersma.dev/how-to-start-wsl-in-linux-user-home/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/wsl/">wsl</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/hugo-modules-for-themes/">Hugo Modules for Themes</a></h2>
-    
-    <h3 class="post-subtitle"><a href="https://broersma.dev/hugo-modules-for-themes/">Instead of git submodules</a></h3>
-    
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 21 May 2021
-  
-    &nbsp;(Last modified on 24 February 2023)
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        The hugo tutorial tells you to use git submodules for themes. However hugo has a better system for dependencies called modules. I&rsquo; ll show you how to switch from git submodules to hugo modules!
-        <a href="https://broersma.dev/hugo-modules-for-themes/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/hugo/">hugo</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-
-          
-            <article class="post-preview">
-    <h2 class="post-title"><a href="https://broersma.dev/why-i-chose-hugo/">Why I chose Hugo</a></h2>
-    
-    <h3 class="post-subtitle"><a href="https://broersma.dev/why-i-chose-hugo/">Or why I ditched Jekyll</a></h3>
-    
-    
-    
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 8 May 2021
-  
-  
-  
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        This blog is currently powered by Hugo, a static site generator built in Go. However this was not my first choice. Initially I was going to use Jekyll for the simple reason that I had heard of it before and it is what Github uses to power Github Pages.
-Almost immediately I decided that while Jekyll seems fine to use I did not want to be limited to what Github natively offers, and I didn&rsquo;t have to.
-        <a href="https://broersma.dev/why-i-chose-hugo/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://broersma.dev/tags/hugo/">hugo</a>&nbsp;
-        
-        <a href="https://broersma.dev/tags/jekyll/">jekyll</a>&nbsp;
         
     </div>
     
@@ -705,7 +379,7 @@ Almost immediately I decided that while Jekyll seems fine to use I did not want 
               </li>
           
           <li>
-            <a href="https://broersma.dev/post/index.xml" title="RSS">
+            <a href="https://broersma.dev/tags/yaml/index.xml" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

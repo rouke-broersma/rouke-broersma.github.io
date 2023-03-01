@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>helm on Rouke Broersma</title>
+    <link>https://broersma.dev/tags/helm/</link>
+    <description>Recent content in helm on Rouke Broersma</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
+    <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
+    <lastBuildDate>Wed, 01 Mar 2023 09:46:05 +0000</lastBuildDate><atom:link href="https://broersma.dev/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Til: Helm Boolean Functions and Falsy-Ness</title>
+      <link>https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/</link>
+      <pubDate>Wed, 01 Mar 2023 09:46:05 +0000</pubDate>
+      <author>rouke@broersma.dev (Rouke Broersma)</author>
+      <guid>https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/</guid>
+      <description>Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You&amp;rsquo;ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn&amp;rsquo;t until it bit me!
+Now a very common basic helm construct for dealing with default values is the following:
+apiVersion: v1 kind: ConfigMap metadata: name: my-cm data: mybool: {{ .</description>
+    </item>
+    
+  </channel>
+</rss>

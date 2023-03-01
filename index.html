@@ -270,6 +270,48 @@ if (!doNotTrack) {
           
           
             <article class="post-preview">
+    <h2 class="post-title"><a href="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/">Til: Helm Boolean Functions and Falsy-Ness</a></h2>
+    
+    
+    
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on 1 March 2023
+  
+  
+  
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You&rsquo;ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn&rsquo;t until it bit me!
+Now a very common basic helm construct for dealing with default values is the following:
+apiVersion: v1 kind: ConfigMap metadata: name: my-cm data: mybool: {{ .
+        <a href="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://broersma.dev/tags/helm/">helm</a>&nbsp;
+        
+        <a href="https://broersma.dev/tags/yaml/">yaml</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+
+          
+            <article class="post-preview">
     <h2 class="post-title"><a href="https://broersma.dev/approve-private-endpoint-connections/">Approve Private Endpoint Connections</a></h2>
     
     <h3 class="post-subtitle"><a href="https://broersma.dev/approve-private-endpoint-connections/">With Bicep</a></h3>
@@ -595,8 +637,6 @@ Almost immediately I decided that while Jekyll seems fine to use I did not want 
     <div class="page-meta">
   
   
-  
-    (Last modified on 24 February 2023)
   
 </div>
 
