@@ -3,9 +3,9 @@ url: about
 title: About me
 ---
 
-Hi! My name is Rouke Broersma. I'm a software developer and open source enthousiast.
+Hi! My name is Rouke Broersma. I'm a platform engineer and open source enthousiast.
 
-My day-to-day involves developing the dotnet developer experience platforms provided to coworkers and customers at [Info Support](https://infosupport.com). 
-In my free time I work on [Stryker](https://stryker-mutator.io), the mutation testing platform for dotnet.
+My day-to-day involves delivering production ready managed cloud platforms to customers at [Info Support](https://infosupport.com). 
+In my free time I work on [Stryker](https://stryker-mutator.io) and my [Homelab](https://github.com/broersma-forslund/homelab).
 
-Currently my main focus area is azure infrastructure (as code). Go [Bicep](https://github.com/Azure/bicep)!
+My main focus area is infrastructure automation.

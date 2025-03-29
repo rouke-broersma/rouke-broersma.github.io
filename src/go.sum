@@ -1,6 +1,6 @@
-github.com/martignoni/hugo-notice v0.0.0-20220915151719-9571973877af h1:beo4H+y36B4t4wO4fu+rQI/tZDZB45VSLgKrpATezVs=
-github.com/martignoni/hugo-notice v0.0.0-20220915151719-9571973877af/go.mod h1:k+PSLmVlZC5iWWxLLOSDQetCCeeqKZQvQJ+AXLg6X1A=
-github.com/msfjarvis/hugo-social-metadata v1.0.0 h1:mfLnus8iznPGiyFkJC93eCWr1PrdiNyv2BSONX1ZQVg=
-github.com/msfjarvis/hugo-social-metadata v1.0.0/go.mod h1:VfkrQTa9Gvdja58swLlBZz2/7ZEoj5nk9xt0pJAhfVo=
+github.com/martignoni/hugo-notice v0.0.0-20250320135530-d7e24b0222d4 h1:rrCIACq6uJVIVqQNSBNukxW4KbH/Hv9VN3nfLbYwClI=
+github.com/martignoni/hugo-notice v0.0.0-20250320135530-d7e24b0222d4/go.mod h1:MIQPOMgEcbyRC0gNLzQFSgrS+wIy3RuQ/HbaZYtTOKU=
+github.com/msfjarvis/hugo-social-metadata v1.0.2 h1:EEt/ERvk8RCLyanMnkm0Q1/ECjoReM/Nx25/8AXUZ7s=
+github.com/msfjarvis/hugo-social-metadata v1.0.2/go.mod h1:VfkrQTa9Gvdja58swLlBZz2/7ZEoj5nk9xt0pJAhfVo=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20230224224545-0722eee69b7c h1:klImuDuYUPgwl0aHdZeLCSDD2bapMbzvenPX8liZeEE=
 github.com/rouke-broersma/beautifulhugo v0.0.0-20230224224545-0722eee69b7c/go.mod h1:G2bvxmCsAxpW9/S3KEr0dLkNPnFAOGQh5baCWVSE7NA=
