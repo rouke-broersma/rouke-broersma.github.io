@@ -10,9 +10,9 @@
  
 
 
-      <title>Til: Helm Boolean Functions and Falsy-Ness - Rouke&#39;s Blog</title>
+      <title>Talos Linux and Dynamic Resource Allocation (Beta) - Rouke&#39;s Blog</title>
 
-  <meta name="description" content="Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You’ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn’t until it bit me!">
+  <meta name="description" content="I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta. I had been using the Intel GPU Device Plugin to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it&rsquo;s fairly straightforward.">
   <meta name="author" content="Rouke Broersma"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -48,8 +48,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/broersma.dev\/til-helm-boolean-functions-and-falsy-ness\/",
-          "name": "Til helm boolean functions and falsy ness"
+          "@id": "https:\/\/broersma.dev\/talos-linux-and-dynamic-resource-allocation-beta\/",
+          "name": "Talos linux and dynamic resource allocation ( beta)"
         }
     }]
 }
@@ -60,15 +60,15 @@
   "author": {
     "name" : "Rouke Broersma"
   },
-  "headline": "Til: Helm Boolean Functions and Falsy-Ness",
-  "description" : "Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You’ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn’t until it bit me!",
+  "headline": "Talos Linux and Dynamic Resource Allocation (Beta)",
+  "description" : "I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta. I had been using the Intel GPU Device Plugin to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it\u0026rsquo;s fairly straightforward.",
   "inLanguage" : "en",
-  "wordCount":  240 ,
-  "datePublished" : "2023-03-01T09:46:05",
-  "dateModified" : "2023-03-01T09:46:05",
+  "wordCount":  602 ,
+  "datePublished" : "2025-03-29T16:38:34",
+  "dateModified" : "2025-03-29T16:38:34",
   "image" : "https:\/\/broersma.dev\/images\/icon-circle.png",
-  "keywords" : [ "helm, yaml" ],
-  "mainEntityOfPage" : "https:\/\/broersma.dev\/til-helm-boolean-functions-and-falsy-ness\/",
+  "keywords" : [ "kubernetes, talos, dra, cdi" ],
+  "mainEntityOfPage" : "https:\/\/broersma.dev\/talos-linux-and-dynamic-resource-allocation-beta\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/broersma.dev",
@@ -82,15 +82,15 @@
 }
 </script>
 
-<meta property="og:title" content="Til: Helm Boolean Functions and Falsy-Ness" />
-<meta property="og:description" content="Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You’ve probably encountered this before yourself. But did you realize that helm template functions also inherit some of the Json issues? I sure didn’t until it bit me!">
+<meta property="og:title" content="Talos Linux and Dynamic Resource Allocation (Beta)" />
+<meta property="og:description" content="I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta. I had been using the Intel GPU Device Plugin to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it&rsquo;s fairly straightforward.">
 <meta property="og:image" content="https://broersma.dev/images/icon-circle.png" />
-<meta property="og:url" content="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" />
+<meta property="og:url" content="https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Rouke Broersma" />
 
-  <meta name="twitter:title" content="Til: Helm Boolean Functions and Falsy-Ness" />
-  <meta name="twitter:description" content="Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You’ve probably encountered this before yourself. But did you realize that helm …">
+  <meta name="twitter:title" content="Talos Linux and Dynamic Resource Allocation (Beta)" />
+  <meta name="twitter:description" content="I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta. I had been using the Intel GPU Device Plugin to …">
   <meta name="twitter:image" content="https://broersma.dev/images/icon-circle.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@roukebroersma" />
@@ -120,18 +120,18 @@
 <meta name="twitter:site" content="@roukebroersma" key="twhandle" />
 
 
-<title>Til: Helm Boolean Functions and Falsy-Ness &middot; Rouke Broersma</title>
-<meta property="og:url" content="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" />
-<meta property="og:title" content="Til: Helm Boolean Functions and Falsy-Ness &middot; Rouke Broersma" />
+<title>Talos Linux and Dynamic Resource Allocation (Beta) &middot; Rouke Broersma</title>
+<meta property="og:url" content="https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/" />
+<meta property="og:title" content="Talos Linux and Dynamic Resource Allocation (Beta) &middot; Rouke Broersma" />
 
 <meta name="og:description" content="I write short(ish) blogposts about things that interest me." />
 
-<meta name="twitter:url" content="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" />
+<meta name="twitter:url" content="https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/" />
 
 
 <meta property="og:image" content="https://broersma.devimages/icon-circle.png" key="ogimage" />
 
-<link rel="canonical" href="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" />
+<link rel="canonical" href="https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/" />
 
 
 
@@ -297,7 +297,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Til: Helm Boolean Functions and Falsy-Ness</h1>
+                <h1>Talos Linux and Dynamic Resource Allocation (Beta)</h1>
               
               
               
@@ -305,7 +305,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 1 March 2023
+  <i class="fas fa-calendar"></i>&nbsp;Posted on 29 March 2025
   
   
   
@@ -329,54 +329,118 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Did you know Yaml is a superset of Json? Probably. Did you realize this means Yaml inherits some of the issues of Json? You&rsquo;ve probably encountered this before yourself.
-But did you realize that helm template functions also inherit some of the Json issues? I sure didn&rsquo;t until it bit me!</p>
-<p>Now a very common basic helm construct for dealing with default values is the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
+        <p>I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta.
+I had been using the <a href="https://github.com/intel/intel-device-plugins-for-kubernetes/blob/main/cmd/gpu_plugin/README.md">Intel GPU Device Plugin</a> to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it&rsquo;s fairly straightforward.</p>
+<p>Since I use Talos Linux in my Homelab some of the following steps and requirements are Talos specific.</p>
+<h2 id="requirements">
+    <a class="heading-anchor" href="#requirements">#</a>
+    Requirements
+</h2><ul>
+<li>Containerd 1.7+</li>
+<li>Kubernetes 1.32+</li>
+<li>Container Device Interface (CDI) enabled and configured</li>
+<li>DRA feature gates enabled in Kubernetes</li>
+<li>Deploy DRA capable device driver</li>
+</ul>
+<p>Let&rsquo;s start with some straightforward steps.</p>
+<h2 id="containerd-kubernetes-and-cdi">
+    <a class="heading-anchor" href="#containerd-kubernetes-and-cdi">#</a>
+    Containerd, Kubernetes and CDI
+</h2><p>Update Talos to a minimum version of <a href="https://github.com/siderolabs/talos/releases/tag/v1.9.0">1.9.0</a>.
+Talos 1.9 contains Containerd 2.0 and has support for Kubernetes 1.32.
+Containerd 2.0 enabled CDI by default, so this fully covers the first three requirements. Almost fully, more on that later.</p>
+<h2 id="enable-dra-feature">
+    <a class="heading-anchor" href="#enable-dra-feature">#</a>
+    Enable DRA Feature
+</h2><p>The DRA beta feature is not enabled by default in Kubernetes 1.32. To enable the feature gates in Talos you need to apply the following configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">cluster</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">apiServer</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">extraArgs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">feature-gates</span>: <span style="color:#ae81ff">DynamicResourceAllocation=true</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">runtime-config</span>: <span style="color:#ae81ff">resource.k8s.io/v1beta1=true</span> <span style="color:#75715e"># Enables the API (CRD)</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">controllerManager</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">extraArgs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">feature-gates</span>: <span style="color:#ae81ff">DynamicResourceAllocation=true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scheduler</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">extraArgs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">feature-gates</span>: <span style="color:#ae81ff">DynamicResourceAllocation=true</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">machine</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kubelet</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">extraArgs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">feature-gates</span>: <span style="color:#ae81ff">DynamicResourceAllocation=true</span>
+</span></span></code></pre></div><p>References:</p>
+<p>Apply the configuration to all nodes, then execute <code>kubectl get deviceclasses</code>. If the response is <code>No resources found</code> you have successfully enabled DRA!</p>
+<h2 id="configure-cdi-in-talos">
+    <a class="heading-anchor" href="#configure-cdi-in-talos">#</a>
+    Configure CDI in Talos
+</h2><p>CDI uses the following default host paths to store configuration for discovered devices (called cdi spec dirs): <code>[&quot;/etc/cdi&quot;, &quot;/var/run/cdi&quot;]</code>
+This is a problem because /etc is read-only in Talos. To use CDI with Talos we need to modify these paths. Add the following Talos configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">machine</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">files</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/etc/cri/conf.d/20-customization.part</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">op</span>: <span style="color:#ae81ff">create</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">content</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      # Set cdi dirs to /var/ because default locations are not writeable in talos
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      [plugins.&#34;io.containerd.cri.v1.runtime&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        cdi_spec_dirs = [&#34;/var/cdi/static&#34;, &#34;/var/cdi/dynamic&#34;]</span>      
+</span></span></code></pre></div><h2 id="deploy-and-use-device-driver">
+    <a class="heading-anchor" href="#deploy-and-use-device-driver">#</a>
+    Deploy and use Device Driver
+</h2><p>Now deploy your device driver with modified config for the cdi spec dirs. I used the <a href="https://github.com/intel/helm-charts/tree/main/charts/intel-gpu-resource-driver">Intel GPU Resource Driver</a> Helm chart, which does not contain sufficient configuration options to modify the CDI Spec Dirs, so for now I apply these modifications by hand.</p>
+<p>Once you&rsquo;ve followed these steps you should be able to execute <code>kubectl get resourceslices</code> which should list all hardware devices your DRA enabled resource driver found in the cluster.</p>
+<p>All that&rsquo;s left is claiming the resource slice in a Pod. Similar to persistent volumes, resources can be claimed statically or dynamically. I have multiple of the same resource available in my cluster so I decided to use a dynamic <code>ResourceClaimTemplate</code>. The template creates the resource claim on Pod scheduling, and release the resource claim when the pod is descheduled.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">resource.k8s.io/v1beta1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ResourceClaimTemplate</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: {{ <span style="color:#ae81ff">.Values.myapp.mybool | default true }}</span>
-</span></span></code></pre></div><p>Let&rsquo;s use this values file to set the bool to false for a specific deployment:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">myapp</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">false</span>
-</span></span></code></pre></div><p>What I expected is a generated template looking like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">false</span>
-</span></span></code></pre></div><p>But what I got was:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><p>Heh? Well, the helm template function is falsy. It treats false as an input to the <code>default</code> function the same as <code>undefined</code>, so it returns <code>true</code>, the default value.
-Apparently I wasn&rsquo;t the only one to get tricked into using this construct, there is a fairly long Github issue with potential workarounds on <a href="https://github.com/helm/helm/issues/3308">the helm repo</a>.</p>
-<p>In the end I chose this construct out of the many proposed solutions:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">ConfigMap</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">my-cm</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">data</span>:
-</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">if list nil true | has .Values.myapp.mybool }}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">else }}</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mybool</span>: {{ <span style="color:#ae81ff">.Values.myapp.mybool }}</span>
-</span></span><span style="display:flex;"><span>  {{- <span style="color:#ae81ff">end }}</span>
-</span></span></code></pre></div><p>Which solution do you prefer? Let me know!</p>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">i915</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">devices</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">requests</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">i915</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">deviceClassName</span>: <span style="color:#ae81ff">gpu.intel.com</span>
+</span></span></code></pre></div><p>I then requested and allocated the resource to my Pod by specifying the claim in my StatefulSet and mounting the claim to my Pod:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">StatefulSet</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">volumeMounts</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tmp</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">resources</span>: 
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">claims</span>:
+</span></span><span style="display:flex;"><span>          - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">i915</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">volumes</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">emptyDir</span>: {}
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">tmp</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">resourceClaims</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">i915</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">resourceClaimTemplateName</span>: <span style="color:#ae81ff">i915</span>
+</span></span></code></pre></div><p>Deploy your app and if all goes well you should now be able to access the GPU device from inside the Pod. You can validate that the device is available inside the Pod by checking the following file paths:</p>
+<ul>
+<li>/dev/dri/renderD128</li>
+<li>/dev/dri/card0</li>
+</ul>
+<p>And there you have it, you should no be able to use DRA and CDI to schedule your Pods with Hardware Device resource access.</p>
+<p>References:</p>
+<ul>
+<li>[1] <a href="https://www.talos.dev/v1.9/reference/configuration/v1alpha1/config/">https://www.talos.dev/v1.9/reference/configuration/v1alpha1/config/</a></li>
+<li>[2] <a href="https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/#enabling-dynamic-resource-allocation">https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/#enabling-dynamic-resource-allocation</a></li>
+<li>[3] <a href="https://github.com/containerd/containerd/blob/main/docs/cri/config.md#full-configuration">https://github.com/containerd/containerd/blob/main/docs/cri/config.md#full-configuration</a></li>
+</ul>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://broersma.dev/tags/helm/">helm</a>&nbsp;
+              <a href="https://broersma.dev/tags/kubernetes/">kubernetes</a>&nbsp;
             
-              <a href="https://broersma.dev/tags/yaml/">yaml</a>&nbsp;
+              <a href="https://broersma.dev/tags/talos/">talos</a>&nbsp;
+            
+              <a href="https://broersma.dev/tags/dra/">dra</a>&nbsp;
+            
+              <a href="https://broersma.dev/tags/cdi/">cdi</a>&nbsp;
             
           </div>
         
@@ -391,28 +455,28 @@ Apparently I wasn&rsquo;t the only one to get tricked into using this construct,
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2ftil-helm-boolean-functions-and-falsy-ness%2f&amp;text=Til%3a%20Helm%20Boolean%20Functions%20and%20Falsy-Ness&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fbroersma.dev%2ftalos-linux-and-dynamic-resource-allocation-beta%2f&amp;text=Talos%20Linux%20and%20Dynamic%20Resource%20Allocation%20%28Beta%29&amp;via=roukebroersma" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2ftil-helm-boolean-functions-and-falsy-ness%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fbroersma.dev%2ftalos-linux-and-dynamic-resource-allocation-beta%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2ftil-helm-boolean-functions-and-falsy-ness%2f&amp;title=Til%3a%20Helm%20Boolean%20Functions%20and%20Falsy-Ness" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fbroersma.dev%2ftalos-linux-and-dynamic-resource-allocation-beta%2f&amp;title=Talos%20Linux%20and%20Dynamic%20Resource%20Allocation%20%28Beta%29" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2ftil-helm-boolean-functions-and-falsy-ness%2f&amp;title=Til%3a%20Helm%20Boolean%20Functions%20and%20Falsy-Ness" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fbroersma.dev%2ftalos-linux-and-dynamic-resource-allocation-beta%2f&amp;title=Talos%20Linux%20and%20Dynamic%20Resource%20Allocation%20%28Beta%29" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
@@ -434,13 +498,9 @@ Apparently I wasn&rsquo;t the only one to get tricked into using this construct,
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://broersma.dev/approve-private-endpoint-connections/" data-toggle="tooltip" data-placement="top" title="Approve Private Endpoint Connections">&larr; Previous Post</a>
+              <a href="https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/" data-toggle="tooltip" data-placement="top" title="Til: Helm Boolean Functions and Falsy-Ness">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/" data-toggle="tooltip" data-placement="top" title="Talos Linux and Dynamic Resource Allocation (Beta)">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
@@ -557,7 +617,7 @@ Apparently I wasn&rsquo;t the only one to get tricked into using this construct,
         
         <p class="credits theme-by text-muted">
           <a href="https://gohugo.io">Hugo v0.107.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/7c95b0364cd83dfaf74fa63916786762da9dfc36">7c95b036</a>]
+          &nbsp;&bull;&nbsp;[<a href="https://github.com/rouke-broersma/rouke-broersma.github.io/tree/2da66b95f33623a123fce7e093a1c534103fea35">2da66b95</a>]
         </p>
       </div>
     </div>

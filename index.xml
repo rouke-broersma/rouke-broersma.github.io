@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>rouke@broersma.dev (Rouke Broersma)</managingEditor>
     <webMaster>rouke@broersma.dev (Rouke Broersma)</webMaster>
-    <lastBuildDate>Wed, 01 Mar 2023 09:46:05 +0000</lastBuildDate><atom:link href="https://broersma.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Mar 2025 16:38:34 +0000</lastBuildDate><atom:link href="https://broersma.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Talos Linux and Dynamic Resource Allocation (Beta)</title>
+      <link>https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/</link>
+      <pubDate>Sat, 29 Mar 2025 16:38:34 +0000</pubDate>
+      <author>rouke@broersma.dev (Rouke Broersma)</author>
+      <guid>https://broersma.dev/talos-linux-and-dynamic-resource-allocation-beta/</guid>
+      <description>I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta. I had been using the Intel GPU Device Plugin to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it&amp;rsquo;s fairly straightforward.</description>
+    </item>
+    
     <item>
       <title>Til: Helm Boolean Functions and Falsy-Ness</title>
       <link>https://broersma.dev/til-helm-boolean-functions-and-falsy-ness/</link>
@@ -87,9 +96,9 @@ Almost immediately I decided that while Jekyll seems fine to use I did not want 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>rouke@broersma.dev (Rouke Broersma)</author>
       <guid>https://broersma.dev/about/</guid>
-      <description>Hi! My name is Rouke Broersma. I&amp;rsquo;m a software developer and open source enthousiast.
-My day-to-day involves developing the dotnet developer experience platforms provided to coworkers and customers at Info Support. In my free time I work on Stryker, the mutation testing platform for dotnet.
-Currently my main focus area is azure infrastructure (as code). Go Bicep!</description>
+      <description>Hi! My name is Rouke Broersma. I&amp;rsquo;m a platform engineer and open source enthousiast.
+My day-to-day involves delivering production ready managed cloud platforms to customers at Info Support. In my free time I work on Stryker and my Homelab.
+My main focus area is infrastructure automation.</description>
     </item>
     
   </channel>
