@@ -8,7 +8,7 @@ tags: [kubernetes, talos, dra, cdi]
 series: []
 ---
 
-I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had be graduated to Beta.
+I upgraded my Kubernetes cluster to 1.32 recently and the changelog mentioned that Dynamic Resource Allocation (DRA) had been graduated to Beta.
 I had been using the [Intel GPU Device Plugin](https://github.com/intel/intel-device-plugins-for-kubernetes/blob/main/cmd/gpu_plugin/README.md) to schedule pods with Hardware Device requirements until now. This seemed like a good opportunity to try out and switch to DRA. Surprisingly, this was fairly simple! I initially ran into some speedbumps but now that I figured it out it's fairly straightforward.
 
 Since I use Talos Linux in my Homelab some of the following steps and requirements are Talos specific.
@@ -31,8 +31,7 @@ Containerd 2.0 enabled CDI by default, so this fully covers the first three requ
 
 ## Enable DRA Feature 
 
-The DRA beta feature is not enabed by default in Kubernetes 1.32. To enable the feature gates in Talos you need to apply the following configuration:
-
+The DRA beta feature is not enabled by default in Kubernetes 1.32. To enable the feature gates in Talos you need to apply the following configuration:
 ```yaml
 cluster:
   apiServer:
@@ -117,7 +116,7 @@ kind: StatefulSet
         resourceClaimTemplateName: i915
 ```
 
-Deploy your app and if all goes well you should now be abe to access the GPU device from inside the Pod. You can validate that the device is available inside the Pod by checking the following file paths:
+Deploy your app and if all goes well you should now be able to access the GPU device from inside the Pod. You can validate that the device is available inside the Pod by checking the following file paths:
 - /dev/dri/renderD128
 - /dev/dri/card0
 
