@@ -120,7 +120,7 @@ Deploy your app and if all goes well you should now be able to access the GPU de
 - /dev/dri/renderD128
 - /dev/dri/card0
 
-And there you have it, you should no be able to use DRA and CDI to schedule your Pods with Hardware Device resource access.
+And there you have it, you should now be able to use DRA and CDI to schedule your Pods with Hardware Device resource access.
 
 References:
 - [1] https://www.talos.dev/v1.9/reference/configuration/v1alpha1/config/
